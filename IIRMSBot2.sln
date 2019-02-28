@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IIRMSBot2", "IIRMSBot2\IIRMSBot2.csproj", "{F254FC90-3BF8-4AAC-9ED8-CE5F8B3DDE4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F254FC90-3BF8-4AAC-9ED8-CE5F8B3DDE4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F254FC90-3BF8-4AAC-9ED8-CE5F8B3DDE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F254FC90-3BF8-4AAC-9ED8-CE5F8B3DDE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F254FC90-3BF8-4AAC-9ED8-CE5F8B3DDE4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED2850B3-DACB-46C3-9E87-7C478245B4E1}
+	EndGlobalSection
+EndGlobal
