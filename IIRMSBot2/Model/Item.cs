@@ -25,6 +25,8 @@ namespace IIRMSBot2.Model
             SUCCESS
         }
 
+        public string Error { get; set; }
+
         public string FileName => _fileName;
         public ITEM_STATUS ItemStatus { get => _itemStatus; set => Set(ref _itemStatus, value); }
 
@@ -39,7 +41,7 @@ namespace IIRMSBot2.Model
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((Item) obj);
+            return Equals((Item)obj);
         }
 
         public override int GetHashCode()

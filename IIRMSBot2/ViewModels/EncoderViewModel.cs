@@ -4,28 +4,38 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
 using IIRMSBot2.Model;
 using IIRMSBot2.ReportBuilders;
+using Microsoft.Win32;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
 namespace IIRMSBot2.ViewModels
 {
-    sealed class EncoderViewModel : Screen
+    internal sealed class EncoderViewModel : Screen
     {
-        private string _baseUrl = "https://orange-green.tk";
-
-        public string BaseUrl
+        public string CurrentError
         {
-            get => _baseUrl;
-            set => _baseUrl = value;
+            get => _currentError;
+            set => Set(ref _currentError, value);
         }
 
+        public string BaseUrl { get; set; } = "https://orange-green.tk";
+
         private string _username;
+
+        public Item SelectedItem
+        {
+            get => _selectedItem;
+            set
+            {
+                Set(ref _selectedItem, value);
+                CurrentError = value?.Error;
+            }
+        }
 
         public string UserName
         {
@@ -36,6 +46,14 @@ namespace IIRMSBot2.ViewModels
         private string _password;
         private ChromeDriver _driver;
         private WebDriverWait _wait;
+        private string _twoFactor;
+        private readonly string _dataDirectory;
+        private string _securityClassification = "CONFIDENTIAL";
+        private string _originOffice = "NICA-RO-08";
+        private bool _isLoading;
+        private string _currentError;
+        private Item _selectedItem;
+
         public ObservableCollection<Item> Items { get; set; }
             = new ObservableCollection<Item>();
 
@@ -68,6 +86,15 @@ namespace IIRMSBot2.ViewModels
         private readonly MasterReportBuilder _masterBuilder;
 
 
+        private string _writtenBy = "Aqudei";
+
+        public string WrittenBy
+        {
+            get => _writtenBy;
+            set => Set(ref _writtenBy, value);
+        }
+
+
         public bool CanRunBot => !IsLoading && !string.IsNullOrWhiteSpace(TwoFactor);
 
         public async void RunBot()
@@ -81,10 +108,7 @@ namespace IIRMSBot2.ViewModels
                     _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(120));
                     DoLogin();
 
-                    foreach (var item in Items)
-                    {
-                        DoEncode(item);
-                    }
+                    foreach (var item in Items) DoEncode(item);
 
                     Debug.WriteLine("Bot done.");
                 }
@@ -103,12 +127,6 @@ namespace IIRMSBot2.ViewModels
             }
         }
 
-        private string _twoFactor;
-        private readonly string _dataDirectory;
-        private string _securityClassification = "CONFIDENTIAL";
-        private string _originOffice = "NICA-RO-08";
-        private bool _isLoading;
-
 
         public string TwoFactor
         {
@@ -124,7 +142,6 @@ namespace IIRMSBot2.ViewModels
         public void Reset()
         {
             foreach (var item in Items)
-            {
                 try
                 {
                     File.Delete(item.FileName);
@@ -133,9 +150,26 @@ namespace IIRMSBot2.ViewModels
                 {
                     Debug.WriteLine(e);
                 }
-            }
 
             Items.Clear();
+        }
+
+        public void RemoveSuccessful()
+        {
+            var removables = new List<Item>();
+
+            foreach (var item in Items.Where(item => item.ItemStatus == Item.ITEM_STATUS.SUCCESS))
+                try
+                {
+                    File.Delete(item.FileName);
+                    removables.Add(item);
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e);
+                }
+
+            foreach (var removable in removables) Items.Remove(removable);
         }
 
         private void DoEncode(Item encodeItem)
@@ -154,6 +188,9 @@ namespace IIRMSBot2.ViewModels
 
                 element = _wait.Until(driver => driver.FindElement(By.Name(Webpage.ENCODER_REPORT_NR)));
                 element.SendKeys(report[KnownReportParts.PART_CNR]);
+
+                element = _wait.Until(driver => driver.FindElement(By.Name(Webpage.ENCODER_WRITTEN_BY)));
+                element.SendKeys(WrittenBy);
 
                 element = _wait.Until(driver => driver.FindElement(By.Name(Webpage.ENCODER_REPORT_DATE)));
                 element.SendKeys(report[KnownReportParts.PART_DATEOFREPORT].Replace("-", ""));
@@ -194,10 +231,19 @@ namespace IIRMSBot2.ViewModels
             catch (Exception e)
             {
                 Debug.WriteLine(e);
-                Execute.OnUIThread(() => encodeItem.ItemStatus = Item.ITEM_STATUS.FAILURE);
+                Execute.OnUIThread(() =>
+                {
+                    encodeItem.ItemStatus = Item.ITEM_STATUS.FAILURE;
+                    encodeItem.Error = e.Message;
+                });
             }
         }
 
+
+        public void OpenDestination()
+        {
+            Process.Start("explorer.exe", _dataDirectory);
+        }
 
         private void DoLogin()
         {
@@ -221,12 +267,13 @@ namespace IIRMSBot2.ViewModels
             botConfig.OriginOffice = OriginOffice;
             botConfig.SourceOffice = SourceOffice;
             botConfig.SecurityClassification = SecurityClassification;
+            botConfig.WrittenBy = WrittenBy;
             botConfig.Save();
         }
 
         public void Import()
         {
-            var dialog = new Microsoft.Win32.OpenFileDialog
+            var dialog = new OpenFileDialog
             {
                 Multiselect = true,
                 Filter = "Document Files |*.doc*"
@@ -239,9 +286,7 @@ namespace IIRMSBot2.ViewModels
             Items.Clear();
 
             foreach (var item in dialog.FileNames)
-            {
                 File.Copy(item, Path.Combine(_dataDirectory, Path.GetFileName(item)), true);
-            }
 
             LoadDocuments();
         }
@@ -269,10 +314,12 @@ namespace IIRMSBot2.ViewModels
             SourceOffice = botConfig.SourceOffice;
             OriginOffice = botConfig.OriginOffice;
             SecurityClassification = botConfig.SecurityClassification;
+            WrittenBy = botConfig.WrittenBy;
 
             _masterBuilder = new MasterReportBuilder();
 
-            _dataDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BotDir");
+            _dataDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                "BotDir");
             Directory.CreateDirectory(_dataDirectory);
 
             LoadDocuments();

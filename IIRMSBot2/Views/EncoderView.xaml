@@ -30,14 +30,17 @@
                     <TextBox x:Name="UserName"/>
                     <Label>Password:</Label>
                     <TextBox x:Name="Password"/>
-                  
+
                     <Label>Source Office:</Label>
                     <TextBox x:Name="SourceOffice"/>
                     <Label>Origin Office:</Label>
                     <TextBox x:Name="OriginOffice"/>
                     <Label>Security Classification:</Label>
                     <TextBox x:Name="SecurityClassification"/>
+                    <Label>Written By:</Label>
+                    <TextBox x:Name="WrittenBy"/>
                     <Button x:Name="SaveLogin" Margin="4" >Save</Button>
+
                 </StackPanel>
 
                 <StackPanel Grid.Row="1">
@@ -49,19 +52,35 @@
                 </StackPanel>
             </Grid>
         </GroupBox>
-        <GroupBox Grid.Column="1" Header="Items">
+        <GroupBox Grid.Row="0" Grid.Column="1" Header="Items">
 
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
 
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="Import" Content="Import" Margin="2"/>
                     <Button x:Name="Reset" Content="Reset" Margin="2"/>
+                    <Button x:Name="RemoveSuccessful" Content="Remove Successful" Margin="2"/>
+                    <Button x:Name="OpenDestination" Content="Open Destination" Margin="2"/>
                 </StackPanel>
-                <DataGrid x:Name="Items" Grid.Row="1" Margin="1" />
+                <DataGrid x:Name="Items" 
+                          IsReadOnly="True"
+                          Grid.Row="1" Margin="1" 
+                          AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="4*" Header="Filename" Binding="{Binding FileName}"/>
+                        <DataGridTextColumn Width="1*" Header="Status" Binding="{Binding ItemStatus}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <TextBox Margin="2" 
+                         x:Name="CurrentError"
+                         IsReadOnly="True"
+                         Grid.Row="2"/>
             </Grid>
         </GroupBox>
 

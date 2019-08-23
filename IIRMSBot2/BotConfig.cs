@@ -16,6 +16,7 @@ namespace IIRMSBot2
         public string SourceOffice { get; set; }
         public string OriginOffice { get; set; }
         public string SecurityClassification { get; set; }
+        public string WrittenBy { get; set; }
 
 
         public void Save()
