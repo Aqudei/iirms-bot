@@ -45,7 +45,7 @@ namespace IIRMSBot2.ReportBuilders
                         yearStr = (int.Parse(yearStr) + 2000).ToString();
                     }
 
-                    report.Add(KnownReportParts.PART_DATEOFREPORT, $"{yearStr}-{monthNum}-{day:00}");
+                    report.Add(KnownReportParts.PART_DATEOFREPORT, $"{monthNum}{day:00}{yearStr}");
                 }
                 else
                 {
