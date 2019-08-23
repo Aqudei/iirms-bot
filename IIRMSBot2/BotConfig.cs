@@ -13,6 +13,11 @@ namespace IIRMSBot2
         public string UserName { get; set; }
         public string Password { get; set; }
 
+        public string SourceOffice { get; set; }
+        public string OriginOffice { get; set; }
+        public string SecurityClassification { get; set; }
+
+
         public void Save()
         {
             var configLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BotConfig.json");
