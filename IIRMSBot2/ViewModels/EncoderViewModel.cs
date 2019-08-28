@@ -20,7 +20,11 @@ namespace IIRMSBot2.ViewModels
         public string CurrentError
         {
             get => _currentError;
-            set => Set(ref _currentError, value);
+            set
+            {
+                Set(ref _currentError, value);
+                NotifyOfPropertyChange(nameof(HasCurrentError));
+            }
         }
 
         public string BaseUrl { get; set; } = "https://orange-green.tk";
@@ -226,7 +230,11 @@ namespace IIRMSBot2.ViewModels
                 element.Submit();
 
                 _wait.Until(d => d.FindElement(By.CssSelector("button.close")));
-                Execute.OnUIThread(() => encodeItem.ItemStatus = Item.ITEM_STATUS.SUCCESS);
+                Execute.OnUIThread(() =>
+                {
+                    encodeItem.ItemStatus = Item.ITEM_STATUS.SUCCESS;
+                    encodeItem.Error = "";
+                });
             }
             catch (Exception e)
             {
@@ -239,6 +247,7 @@ namespace IIRMSBot2.ViewModels
             }
         }
 
+        public bool HasCurrentError => !string.IsNullOrWhiteSpace(CurrentError);
 
         public void OpenDestination()
         {

@@ -77,10 +77,17 @@
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <TextBox Margin="2" 
-                         x:Name="CurrentError"
-                         IsReadOnly="True"
-                         Grid.Row="2"/>
+                <Grid Grid.Row="2" Margin="2" Visibility="{Binding HasCurrentError, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label VerticalAlignment="Center" Foreground="#FFE42929">Error</Label>
+                    <TextBox Grid.Row="1"
+                             x:Name="CurrentError"
+                             IsReadOnly="True" />
+                </Grid>
+
             </Grid>
         </GroupBox>
 
