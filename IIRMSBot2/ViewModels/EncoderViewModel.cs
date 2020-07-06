@@ -5,13 +5,18 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 using Caliburn.Micro;
 using IIRMSBot2.Model;
 using IIRMSBot2.ReportBuilders;
+using ikvm.extensions;
+using java.lang;
 using Microsoft.Win32;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using Exception = System.Exception;
+using Process = System.Diagnostics.Process;
 
 namespace IIRMSBot2.ViewModels
 {
@@ -27,7 +32,7 @@ namespace IIRMSBot2.ViewModels
             }
         }
 
-        public string BaseUrl { get; set; } = "https://orange-green.tk";
+        public string BaseUrl { get; set; } = "https://orange-green.cf";
 
         private string _username;
 
@@ -179,12 +184,12 @@ namespace IIRMSBot2.ViewModels
         private void DoEncode(Item encodeItem)
         {
             try
-            {
+            { 
                 Execute.OnUIThread(() => encodeItem.ItemStatus = Item.ITEM_STATUS.READING);
 
                 var report = _masterBuilder.Build(encodeItem.FileName);
 
-                var encodeUrl = "https://orange-green.tk/Encoder/Document";
+                var encodeUrl = "https://orange-green.cf/Encoder/Document";
                 _driver.Navigate().GoToUrl(encodeUrl);
 
                 var element = _wait.Until(driver => driver.FindElement(By.Name(Webpage.ENCODER_SUBJECT)));
@@ -211,6 +216,7 @@ namespace IIRMSBot2.ViewModels
                 element = _wait.Until(driver => driver.FindElement(By.Name(Webpage.ENCODER_FILE)));
                 element.SendKeys(encodeItem.FileName);
 
+                Thread.sleep(2000);
                 element = _wait.Until(driver => driver.FindElement(By.Name(Webpage.ENCODER_REPORT_TYPE)));
                 selectElement = new SelectElement(element);
                 selectElement.SelectByText(report[KnownReportParts.REPORTTYPE]);
@@ -224,12 +230,13 @@ namespace IIRMSBot2.ViewModels
                 selectElement.SelectByText(OriginOffice);
 
                 element = _wait.Until(driver => driver.FindElement(By.Name(Webpage.ENCODER_FULLTEXT)));
+                //new Utils.SetClipboardHelper(report[KnownReportParts.PART_BODY]).Go();
                 element.SendKeys(report[KnownReportParts.PART_BODY]);
-
+                //element.SendKeys(OpenQA.Selenium.Keys.Control + 'v' );
                 encodeItem.ItemStatus = Item.ITEM_STATUS.UPLOADING;
                 element.Submit();
 
-                _wait.Until(d => d.FindElement(By.CssSelector("button.close")));
+                _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.CssSelector("button.close")));
                 Execute.OnUIThread(() =>
                 {
                     encodeItem.ItemStatus = Item.ITEM_STATUS.SUCCESS;
@@ -256,7 +263,7 @@ namespace IIRMSBot2.ViewModels
 
         private void DoLogin()
         {
-            _driver.Navigate().GoToUrl("https://orange-green.tk/Account/Login?ReturnUrl=%2F");
+            _driver.Navigate().GoToUrl("https://orange-green.cf/Account/Login?ReturnUrl=%2F");
             var element = _wait.Until(d => d.FindElement(By.Name(Webpage.LOGIN_USERNAME)));
             element.SendKeys(UserName);
             element = _wait.Until(d => d.FindElement(By.Name(Webpage.LOGIN_PASSWORD)));
@@ -291,8 +298,6 @@ namespace IIRMSBot2.ViewModels
             var result = dialog.ShowDialog();
             if (!result.HasValue || !result.Value)
                 return;
-
-            Items.Clear();
 
             foreach (var item in dialog.FileNames)
                 File.Copy(item, Path.Combine(_dataDirectory, Path.GetFileName(item)), true);

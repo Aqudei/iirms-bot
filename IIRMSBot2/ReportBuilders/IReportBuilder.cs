@@ -4,6 +4,6 @@ namespace IIRMSBot2.ReportBuilders
 {
     public interface IReportBuilder
     {
-        void Build(Dictionary<string, string> report, string rawInputBody);
+        void Build(Dictionary<string, string> report, TikaOnDotNet.TextExtraction.TextExtractionResult textExtractionResult);
     }
 }

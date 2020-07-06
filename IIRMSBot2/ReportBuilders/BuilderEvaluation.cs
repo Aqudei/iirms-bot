@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using TikaOnDotNet.TextExtraction;
 
 namespace IIRMSBot2.ReportBuilders
 {
     public class BuilderEvaluation : ReportBuilderBase, IReportBuilder
     {
 
-        private Regex _regex;
-        private Regex _regex2;
+        private readonly Regex _regex;
+        private readonly Regex _regex2;
 
         public BuilderEvaluation()
         {
@@ -18,22 +19,30 @@ namespace IIRMSBot2.ReportBuilders
                 RegexOptions.IgnoreCase);
         }
 
-        public void Build(Dictionary<string, string> report, string rawInputBody)
+        public void Build(Dictionary<string, string> report, TextExtractionResult rawInputBody)
         {
-            var rslt = _regex.Match(rawInputBody);
-            if (rslt.Success)
+            if (report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".AMR") 
+                || report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".AAR")
+                || report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".SDDP"))
             {
-                if (rslt.Groups[1].Value.ToUpper().Contains("DOC"))
+                report.Add(KnownReportParts.PART_EVALUATION, "DOC");
+                return;
+            }
+
+            var match = _regex.Match(rawInputBody.Text);
+            if (match.Success)
+            {
+                if (match.Groups[1].Value.ToUpper().Contains("DOC"))
                 {
                     report.Add(KnownReportParts.PART_EVALUATION, "DOC");
                     return;
                 }
                 else
                 {
-                    var rslt2 = _regex2.Match(rslt.Groups[1].Value.ToUpper());
-                    if (rslt2.Success)
+                    var match2 = _regex2.Match(match.Groups[1].Value.ToUpper());
+                    if (match2.Success)
                     {
-                        report.Add(KnownReportParts.PART_EVALUATION, rslt2.Groups[1].Value + rslt2.Groups[2].Value);
+                        report.Add(KnownReportParts.PART_EVALUATION, match2.Groups[1].Value + match2.Groups[2].Value);
                         return;
                     }
                 }

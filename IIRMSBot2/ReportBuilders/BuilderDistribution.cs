@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using TikaOnDotNet.TextExtraction;
 
 namespace IIRMSBot2.ReportBuilders
 {
@@ -15,9 +16,9 @@ namespace IIRMSBot2.ReportBuilders
 
         private readonly Regex _redundantColon = new Regex("[;:]+");
 
-        public void Build(Dictionary<string, string> report, string rawInputBody)
+        public void Build(Dictionary<string, string> report, TextExtractionResult rawInputBody)
         {
-            var rslt = _regex.Match(rawInputBody);
+            var rslt = _regex.Match(rawInputBody.Text);
             if (rslt.Success)
             {
                 var tmp = rslt.Groups[1].Value.ToUpper().Trim("\r\n ".ToCharArray());

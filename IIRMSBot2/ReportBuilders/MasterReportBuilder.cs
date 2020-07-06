@@ -13,9 +13,10 @@ namespace IIRMSBot2.ReportBuilders
             _reportBuilder.Add(KnownReportParts.PART_DATEOFREPORT, new BuilderDateOfReport());
             _reportBuilder.Add(KnownReportParts.PART_EVALUATION, new BuilderEvaluation());
             _reportBuilder.Add(KnownReportParts.PART_BODY, new BuilderReportBody());
+            _reportBuilder.Add(KnownReportParts.REPORTTYPE, new BuilderReportType());
             _reportBuilder.Add(KnownReportParts.PART_SUBJECT, new BuilderSubject());
             //_reportBuilder.Add(new BuilderDistribution());
-            _reportBuilder.Add(KnownReportParts.REPORTTYPE, new BuilderReportType());
+           
 
             _textExtractor = new TextExtractor();
         }

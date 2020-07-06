@@ -1,4 +1,6 @@
-﻿namespace IIRMSBot2.ReportBuilders
+﻿using TikaOnDotNet.TextExtraction;
+
+namespace IIRMSBot2.ReportBuilders
 {
     public class TextExtractor
     {
@@ -10,10 +12,9 @@
             _extractor = new TikaOnDotNet.TextExtraction.TextExtractor();
         }
 
-        public string ExtractText(string filename)
+        public TextExtractionResult ExtractText(string filename)
         {
-            var extracted = _extractor.Extract(filename);
-            return extracted.Text;
+            return _extractor.Extract(filename);
         }
     }
 }

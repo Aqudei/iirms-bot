@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using TikaOnDotNet.TextExtraction;
 
 namespace IIRMSBot2.ReportBuilders
 {
@@ -13,7 +14,7 @@ namespace IIRMSBot2.ReportBuilders
             _regex = new Regex(@"\b[a-z0-9\-]+?\d\d[a-l]\d+\.[a-z]+", RegexOptions.IgnoreCase);
         }
 
-        public void Build(Dictionary<string, string> report, string rawInputBody)
+        public void Build(Dictionary<string, string> report, TextExtractionResult rawInputBody)
         {
             if (report.ContainsKey(KnownReportParts.PART_FILENAME) == false)
                 throw new PartNotFoundException("A filename is needed in order to parse the CNR of report.");

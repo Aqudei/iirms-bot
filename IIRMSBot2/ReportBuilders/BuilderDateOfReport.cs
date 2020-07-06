@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using TikaOnDotNet.TextExtraction;
 
 namespace IIRMSBot2.ReportBuilders
 {
@@ -23,23 +24,48 @@ namespace IIRMSBot2.ReportBuilders
         };
 
         private readonly Regex _regex;
+        private readonly Regex _regexSddp;
 
         public BuilderDateOfReport()
         {
             _regex = new Regex(@"date\s+of\s+report\s*:\s*(\d\d)\s+([a-z]+)\s+(\d+)", RegexOptions.IgnoreCase);
+            _regexSddp = new Regex(@"(\d\d)\s+([a-z]+)\s+(\d\d\d\d)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
-        public void Build(Dictionary<string, string> report, string rawInputBody)
+        public void Build(Dictionary<string, string> report, TextExtractionResult textExtractionResult)
         {
             try
             {
-                var rslt = _regex.Match(rawInputBody);
-                if (rslt.Success)
+                if (report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".SDDP"))
                 {
-                    var monthStr = rslt.Groups[2].Value.Trim().ToLower().Substring(0, 3);
+                    var matchSddp = _regexSddp.Match(textExtractionResult.Text);
+                    if (!matchSddp.Success)
+                    {
+                        if (_required)
+                            throw new PartNotFoundException("Date of report not found");
+                    }
+
+                    var monthStr = matchSddp.Groups[2].Value.Trim().ToLower().Substring(0, 3);
                     var monthNum = _lookup[monthStr];
-                    var yearStr = rslt.Groups[3].Value.Trim();
-                    var day = int.Parse(rslt.Groups[1].Value.Trim());
+                    var yearStr = matchSddp.Groups[3].Value.Trim();
+                    var day = int.Parse(matchSddp.Groups[1].Value.Trim());
+                    if (yearStr.Length == 2)
+                    {
+                        yearStr = (int.Parse(yearStr) + 2000).ToString();
+                    }
+
+                    report.Add(KnownReportParts.PART_DATEOFREPORT, $"{monthNum}-{day:00}-{yearStr}");
+
+                    return;
+                }
+
+                var match = _regex.Match(textExtractionResult.Text);
+                if (match.Success)
+                {
+                    var monthStr = match.Groups[2].Value.Trim().ToLower().Substring(0, 3);
+                    var monthNum = _lookup[monthStr];
+                    var yearStr = match.Groups[3].Value.Trim();
+                    var day = int.Parse(match.Groups[1].Value.Trim());
                     if (yearStr.Length == 2)
                     {
                         yearStr = (int.Parse(yearStr) + 2000).ToString();

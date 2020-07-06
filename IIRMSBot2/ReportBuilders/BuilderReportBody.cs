@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using TikaOnDotNet.TextExtraction;
 
 namespace IIRMSBot2.ReportBuilders
 {
@@ -8,24 +9,33 @@ namespace IIRMSBot2.ReportBuilders
         private readonly Regex _regex = new Regex(@"information\s*:\s*$(.+?)comment/?s?\s*:", RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Multiline);
         private readonly Regex _regex2 = new Regex(@"references?\s*:\s*.*?$(.+)comment/?s\s*:", RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Multiline);
 
-        public void Build(Dictionary<string, string> report, string rawInputBody)
+        public void Build(Dictionary<string, string> report, TextExtractionResult rawInputBody)
         {
-            var rslt = _regex.Match(rawInputBody);
-            if (rslt.Success)
+            if (report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".AMR") 
+                || report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".AAR")
+                || report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".SDDP"))
             {
-                report.Add(KnownReportParts.PART_BODY,
-                    RemoveInBetweenWhiteSpaces(rslt.Groups[1].Value.Trim("\r\n\t ".ToCharArray())));
+                report.Add(KnownReportParts.PART_BODY, RemoveInBetweenWhiteSpaces(rawInputBody.Text));
                 return;
             }
 
-            var rslt2 = _regex2.Match(rawInputBody);
-            if (rslt2.Success)
+            var match = _regex.Match(rawInputBody.Text);
+            if (match.Success)
             {
                 report.Add(KnownReportParts.PART_BODY,
-                                    RemoveInBetweenWhiteSpaces(rslt2.Groups[1].Value.Trim("\r\n\t ".ToCharArray())));
+                    RemoveInBetweenWhiteSpaces(match.Groups[1].Value.Trim("\r\n\t ".ToCharArray())));
                 return;
             }
-            
+
+            var match2 = _regex2.Match(rawInputBody.Text);
+            if (match2.Success)
+            {
+                report.Add(KnownReportParts.PART_BODY,
+                                    RemoveInBetweenWhiteSpaces(match2.Groups[1].Value.Trim("\r\n\t ".ToCharArray())));
+                return;
+            }
+
+
             throw new PartNotFoundException("Report body not found");
         }
     }
