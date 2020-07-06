@@ -17,6 +17,8 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Exception = System.Exception;
 using Process = System.Diagnostics.Process;
+using EC = SeleniumExtras.WaitHelpers.ExpectedConditions;
+
 
 namespace IIRMSBot2.ViewModels
 {
@@ -112,7 +114,9 @@ namespace IIRMSBot2.ViewModels
 
             await Task.Run(() =>
             {
-                using (_driver = new ChromeDriver())
+                ChromeOptions options = new ChromeOptions();
+                options.AddArguments("--disable-notifications"); // to disable notification
+                using (_driver = new ChromeDriver(options))
                 {
                     _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(120));
                     DoLogin();
@@ -181,16 +185,35 @@ namespace IIRMSBot2.ViewModels
             foreach (var removable in removables) Items.Remove(removable);
         }
 
+        private void WaitForAlert()
+        {
+            try
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    _wait.Until(EC.AlertIsPresent()).Dismiss();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
         private void DoEncode(Item encodeItem)
         {
             try
-            { 
+            {
                 Execute.OnUIThread(() => encodeItem.ItemStatus = Item.ITEM_STATUS.READING);
 
                 var report = _masterBuilder.Build(encodeItem.FileName);
 
-                var encodeUrl = "https://orange-green.cf/Encoder/Document";
-                _driver.Navigate().GoToUrl(encodeUrl);
+                //var encodeUrl = "https://orange-green.cf/Encoder/Document";
+                // var encodeUrl1 = "https://orange-green.cf";
+                var encodeUrl2 = "https://orange-green.cf/Encoder#/Docs";
+                //_driver.Navigate().GoToUrl(encodeUrl1);
+                _driver.Navigate().GoToUrl(encodeUrl2);
+                _wait.Until(EC.ElementExists(By.LinkText("New Record"))).Click();
+
 
                 var element = _wait.Until(driver => driver.FindElement(By.Name(Webpage.ENCODER_SUBJECT)));
                 element.SendKeys(report[KnownReportParts.PART_SUBJECT]);
@@ -205,11 +228,11 @@ namespace IIRMSBot2.ViewModels
                 element.SendKeys(report[KnownReportParts.PART_DATEOFREPORT].Replace("-", ""));
                 Debug.WriteLine("Report Date: {0}", new object[] { report[KnownReportParts.PART_DATEOFREPORT] });
 
-                element = _wait.Until(driver => driver.FindElement(By.Name(Webpage.ENCODER_SOURCE_OFFICE)));
+                element = _wait.Until(EC.ElementExists(By.CssSelector($"select[ng-model='{Webpage.ENCODER_SOURCE_OFFICE}']")));
                 var selectElement = new SelectElement(element);
                 selectElement.SelectByText(SourceOffice);
 
-                element = _wait.Until(driver => driver.FindElement(By.Name(Webpage.ENCODER_ACCURACY)));
+                element = _wait.Until(EC.ElementExists(By.CssSelector($"select[ng-model='{Webpage.ENCODER_ACCURACY}']")));
                 selectElement = new SelectElement(element);
                 selectElement.SelectByText(report[KnownReportParts.PART_EVALUATION]);
 
@@ -217,15 +240,15 @@ namespace IIRMSBot2.ViewModels
                 element.SendKeys(encodeItem.FileName);
 
                 Thread.sleep(2000);
-                element = _wait.Until(driver => driver.FindElement(By.Name(Webpage.ENCODER_REPORT_TYPE)));
+                element = _wait.Until(EC.ElementExists(By.CssSelector($"select[ng-model='{Webpage.ENCODER_REPORT_TYPE}']")));
                 selectElement = new SelectElement(element);
                 selectElement.SelectByText(report[KnownReportParts.REPORTTYPE]);
 
-                element = _wait.Until(driver => driver.FindElement(By.Name(Webpage.ENCODER_SECURITY_CLASSIFICATION)));
+                element = _wait.Until(EC.ElementExists(By.CssSelector($"select[ng-model='{Webpage.ENCODER_SECURITY_CLASSIFICATION}']")));
                 selectElement = new SelectElement(element);
                 selectElement.SelectByText(SecurityClassification);
 
-                element = _wait.Until(driver => driver.FindElement(By.Name(Webpage.ENCODER_ORIGIN_OFFICE)));
+                element = _wait.Until(EC.ElementExists(By.CssSelector($"select[ng-model='{Webpage.ENCODER_ORIGIN_OFFICE}']")));
                 selectElement = new SelectElement(element);
                 selectElement.SelectByText(OriginOffice);
 
@@ -236,7 +259,7 @@ namespace IIRMSBot2.ViewModels
                 encodeItem.ItemStatus = Item.ITEM_STATUS.UPLOADING;
                 element.Submit();
 
-                _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.CssSelector("button.close")));
+                //_wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.CssSelector("button.close")));
                 Execute.OnUIThread(() =>
                 {
                     encodeItem.ItemStatus = Item.ITEM_STATUS.SUCCESS;
@@ -251,6 +274,10 @@ namespace IIRMSBot2.ViewModels
                     encodeItem.ItemStatus = Item.ITEM_STATUS.FAILURE;
                     encodeItem.Error = e.Message;
                 });
+            } finally
+            {
+                WaitForAlert();
+                _driver.Navigate().Refresh();
             }
         }
 
