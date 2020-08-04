@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Windows;
 using Caliburn.Micro;
@@ -15,15 +16,29 @@ using Microsoft.Win32;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using RestSharp;
+using Cookie = System.Net.Cookie;
 using Exception = System.Exception;
 using Process = System.Diagnostics.Process;
 using EC = SeleniumExtras.WaitHelpers.ExpectedConditions;
-
 
 namespace IIRMSBot2.ViewModels
 {
     internal sealed class EncoderViewModel : Screen
     {
+        private string _username;
+        private string _password;
+        private ChromeDriver _driver;
+        private WebDriverWait _wait;
+        private string _twoFactor;
+        private readonly string _dataDirectory;
+        private string _securityClassification = "CONFIDENTIAL";
+        private string _originOffice = "NICA-RO-08";
+        private bool _isLoading;
+        private string _currentError;
+        private Item _selectedItem;
+        private RestClient _client = new RestClient();
+
         public string CurrentError
         {
             get => _currentError;
@@ -35,8 +50,6 @@ namespace IIRMSBot2.ViewModels
         }
 
         public string BaseUrl { get; set; } = "https://orange-green.cf";
-
-        private string _username;
 
         public Item SelectedItem
         {
@@ -54,16 +67,7 @@ namespace IIRMSBot2.ViewModels
             set => Set(ref _username, value);
         }
 
-        private string _password;
-        private ChromeDriver _driver;
-        private WebDriverWait _wait;
-        private string _twoFactor;
-        private readonly string _dataDirectory;
-        private string _securityClassification = "CONFIDENTIAL";
-        private string _originOffice = "NICA-RO-08";
-        private bool _isLoading;
-        private string _currentError;
-        private Item _selectedItem;
+
 
         public ObservableCollection<Item> Items { get; set; }
             = new ObservableCollection<Item>();
@@ -274,7 +278,8 @@ namespace IIRMSBot2.ViewModels
                     encodeItem.ItemStatus = Item.ITEM_STATUS.FAILURE;
                     encodeItem.Error = e.Message;
                 });
-            } finally
+            }
+            finally
             {
                 WaitForAlert();
                 _driver.Navigate().Refresh();
@@ -288,18 +293,33 @@ namespace IIRMSBot2.ViewModels
             Process.Start("explorer.exe", _dataDirectory);
         }
 
+        private bool CheckExists(string reportNumber)
+        {
+            var url =
+                $"https://orange-green.cf/api/RECORD/getdoc/?dateend=&datestart=&itemsPerPage=20&page=1&region=&reportnumber={reportNumber}&reverse=false&search=&sortBy=SubjectTitle";
+            var request = new RestRequest(url, Method.GET);
+            var result = _client.Execute(request);
+
+        }
+
         private void DoLogin()
         {
             _driver.Navigate().GoToUrl("https://orange-green.cf/Account/Login?ReturnUrl=%2F");
             var element = _wait.Until(d => d.FindElement(By.Name(Webpage.LOGIN_USERNAME)));
             element.SendKeys(UserName);
-            element = _wait.Until(d => d.FindElement(By.Name(Webpage.LOGIN_PASSWORD)));
+            element = _wait.Until(EC.ElementExists(By.Name(Webpage.LOGIN_PASSWORD)));
             element.SendKeys(Password);
             element.Submit();
 
-            element = _wait.Until(d => d.FindElement(By.Name(Webpage.LOGIN_2FA)));
+            element = _wait.Until(EC.ElementExists(By.Name(Webpage.LOGIN_2FA)));
             element.SendKeys(TwoFactor);
             element.Submit();
+            _wait.Until(EC.ElementExists(By.LinkText("Documents")));
+            _client.CookieContainer = new CookieContainer();
+            foreach (var cookie in _driver.Manage().Cookies.AllCookies)
+            {
+                _client.CookieContainer.Add(new Cookie(cookie.Name, cookie.Value, cookie.Path, cookie.Domain));
+            }
         }
 
         public void SaveLogin()
