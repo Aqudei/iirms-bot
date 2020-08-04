@@ -211,7 +211,15 @@ namespace IIRMSBot2.ViewModels
 
                 var report = _masterBuilder.Build(encodeItem.FileName);
                 if (CheckExists(report[KnownReportParts.PART_CNR]))
+                {
+                    Execute.OnUIThread(() =>
+                    {
+                        encodeItem.ItemStatus = Item.ITEM_STATUS.FAILURE;
+                        encodeItem.Error = "This item already exists in IIRMS";
+                    });
+
                     return;
+                }
 
                 //var encodeUrl = "https://orange-green.cf/Encoder/Document";
                 // var encodeUrl1 = "https://orange-green.cf";
@@ -283,7 +291,7 @@ namespace IIRMSBot2.ViewModels
             }
             finally
             {
-                WaitForAlert();
+                // WaitForAlert();
                 _driver.Navigate().Refresh();
             }
         }
@@ -316,7 +324,7 @@ namespace IIRMSBot2.ViewModels
             element = _wait.Until(EC.ElementExists(By.Name(Webpage.LOGIN_2FA)));
             element.SendKeys(TwoFactor);
             element.Submit();
-            _wait.Until(EC.ElementExists(By.LinkText("Documents")));
+            _wait.Until(EC.ElementExists(By.ClassName("profile_img")));
             _client.CookieContainer = new CookieContainer();
             foreach (var cookie in _driver.Manage().Cookies.AllCookies)
             {
