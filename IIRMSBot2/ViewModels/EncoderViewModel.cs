@@ -210,6 +210,8 @@ namespace IIRMSBot2.ViewModels
                 Execute.OnUIThread(() => encodeItem.ItemStatus = Item.ITEM_STATUS.READING);
 
                 var report = _masterBuilder.Build(encodeItem.FileName);
+                if (CheckExists(report[KnownReportParts.PART_CNR]))
+                    return;
 
                 //var encodeUrl = "https://orange-green.cf/Encoder/Document";
                 // var encodeUrl1 = "https://orange-green.cf";
@@ -298,8 +300,8 @@ namespace IIRMSBot2.ViewModels
             var url =
                 $"https://orange-green.cf/api/RECORD/getdoc/?dateend=&datestart=&itemsPerPage=20&page=1&region=&reportnumber={reportNumber}&reverse=false&search=&sortBy=SubjectTitle";
             var request = new RestRequest(url, Method.GET);
-            var result = _client.Execute(request);
-
+            var result = _client.Execute<CheckResult>(request);
+            return result.IsSuccessful && result.Data.Count > 0;
         }
 
         private void DoLogin()

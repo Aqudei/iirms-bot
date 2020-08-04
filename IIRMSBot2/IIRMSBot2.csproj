@@ -230,6 +230,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BotConfig.cs" />
+    <Compile Include="Model\CheckResult.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="ReportBuilders\BuilderCNR.cs" />
     <Compile Include="ReportBuilders\BuilderDateOfReport.cs" />
@@ -312,7 +313,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="chromedriver.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
