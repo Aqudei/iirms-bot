@@ -272,7 +272,7 @@ namespace IIRMSBot2.ViewModels
                 //element.SendKeys(OpenQA.Selenium.Keys.Control + 'v' );
                 encodeItem.ItemStatus = Item.ITEM_STATUS.UPLOADING;
                 element.Submit();
-
+                _wait.Until(EC.AlertIsPresent());
                 //_wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.CssSelector("button.close")));
                 Execute.OnUIThread(() =>
                 {
