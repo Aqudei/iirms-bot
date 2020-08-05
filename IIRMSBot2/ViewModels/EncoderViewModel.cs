@@ -518,15 +518,23 @@ namespace IIRMSBot2.ViewModels
             var match = regex.Match(item.FileName);
             if (!match.Success)
             {
-                item.ItemStatus = Item.ITEM_STATUS.FAILURE;
-                item.Error = "Unable to find CNR";
+                Execute.OnUIThread(() =>
+                {
+                    item.ItemStatus = Item.ITEM_STATUS.FAILURE;
+                    item.Error = "Unable to find CNR";
+                });
+
                 return null;
             }
 
             if (CheckDuplicate(match.Value))
             {
-                item.ItemStatus = Item.ITEM_STATUS.SUCCESS;
-                item.Error = "Report already exists in IIRMS database!";
+                Execute.OnUIThread(() =>
+                {
+                    item.ItemStatus = Item.ITEM_STATUS.SUCCESS;
+                    item.Error = "Report already exists in IIRMS database!";
+                });
+
                 return null;
             }
 
