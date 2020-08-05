@@ -51,10 +51,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>427197A474FDDEB7B4EFE0256F596DC08A94BA63</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2D484F58012A7B60ABB437CCC66B8B9998722CD1</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>IIRMSBot2_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>IIRMSBot2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
