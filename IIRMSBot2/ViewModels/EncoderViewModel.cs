@@ -181,12 +181,10 @@ namespace IIRMSBot2.ViewModels
                     if (uploadResult == null) continue;
 
                     var result = SubmitDocumentInfo(uploadResult, item);
-                    if (!result.Error) continue;
-                    Execute.OnUIThread(() =>
+                    if (result == null)
                     {
-                        item.Error = result.Message;
-                        item.ItemStatus = Item.ITEM_STATUS.FAILURE;
-                    });
+                        continue;
+                    }
                 }
 
                 Debug.WriteLine("Bot done.");
@@ -479,7 +477,9 @@ namespace IIRMSBot2.ViewModels
                 request.AddJsonBody(encodePayload);
                 var response = _client.Execute<NewResult>(request);
                 if (!response.IsSuccessful)
+                {
                     throw new Exception($"Failed to add document info for file: {uploadResult.Id}");
+                }
 
                 Execute.OnUIThread(() =>
                 {
@@ -509,8 +509,12 @@ namespace IIRMSBot2.ViewModels
 
             if (!IsFileServerAvailable)
             {
-                item.ItemStatus = Item.ITEM_STATUS.FAILURE;
-                item.Error = "File Server is not Online! Attachment will not be uploaded";
+                Execute.OnUIThread(() =>
+                {
+                    item.ItemStatus = Item.ITEM_STATUS.FAILURE;
+                    item.Error = "File Server is not Online! Attachment will not be uploaded";
+                });
+
                 return null;
             }
 
