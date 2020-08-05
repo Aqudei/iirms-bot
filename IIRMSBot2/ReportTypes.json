@@ -1,0 +1,272 @@
+﻿[
+  {
+    "sourceID": "D018",
+    "reportID": "D018-0001",
+    "reportName": "REPLY TO EEI",
+    "dateCreated": "2007-03-23T00:00:00",
+    "dateUpdated": "2007-05-09T13:39:00",
+    "createdBy": "dagdagp",
+    "updatedBy": "ortegaj"
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R001",
+    "reportName": "OPS REPORT",
+    "dateCreated": null,
+    "dateUpdated": "2007-05-09T13:39:00",
+    "createdBy": null,
+    "updatedBy": "ortegaj"
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R002",
+    "reportName": "MONTHLY INTELLIGENCE SUMMARY",
+    "dateCreated": null,
+    "dateUpdated": "2007-05-09T13:39:00",
+    "createdBy": null,
+    "updatedBy": "ortegaj"
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R003",
+    "reportName": "RICC",
+    "dateCreated": null,
+    "dateUpdated": null,
+    "createdBy": null,
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R004",
+    "reportName": "ORDER OF BATTLE",
+    "dateCreated": null,
+    "dateUpdated": "2007-05-09T13:40:00",
+    "createdBy": null,
+    "updatedBy": "ortegaj"
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R005",
+    "reportName": "SPOT REPORT",
+    "dateCreated": null,
+    "dateUpdated": "2007-05-09T13:40:00",
+    "createdBy": null,
+    "updatedBy": "ortegaj"
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R006",
+    "reportName": "CASING REPORT",
+    "dateCreated": null,
+    "dateUpdated": "2007-05-09T13:39:00",
+    "createdBy": null,
+    "updatedBy": "ortegaj"
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R007",
+    "reportName": "CONTACT REPORT",
+    "dateCreated": null,
+    "dateUpdated": "2007-05-09T13:39:00",
+    "createdBy": null,
+    "updatedBy": "ortegaj"
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R008",
+    "reportName": "COVERAGE REPORT",
+    "dateCreated": null,
+    "dateUpdated": "2007-05-09T13:39:00",
+    "createdBy": null,
+    "updatedBy": "ortegaj"
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R009",
+    "reportName": "SUMMARY OF INFORMATION",
+    "dateCreated": "2007-05-03T15:07:00",
+    "dateUpdated": "2007-05-08T14:36:00",
+    "createdBy": "dagdagp",
+    "updatedBy": "ortegaj"
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R010",
+    "reportName": "REPLY TO PID",
+    "dateCreated": "2007-05-07T14:48:00",
+    "dateUpdated": null,
+    "createdBy": "apalisoka",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R011",
+    "reportName": "INFORMATION REPORT",
+    "dateCreated": "2007-05-09T13:40:00",
+    "dateUpdated": null,
+    "createdBy": "ortegaj",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R012",
+    "reportName": "DISPOSITION FORM",
+    "dateCreated": "2007-05-09T13:40:00",
+    "dateUpdated": null,
+    "createdBy": "ortegaj",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R013",
+    "reportName": "OUTGOING MESSAGE",
+    "dateCreated": "2007-05-09T13:40:00",
+    "dateUpdated": null,
+    "createdBy": "ortegaj",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R014",
+    "reportName": "SPECIAL REPORT",
+    "dateCreated": "2007-05-09T13:59:00",
+    "dateUpdated": null,
+    "createdBy": "ortegaj",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R015",
+    "reportName": "REGIONAL INTELLIGENCE COMMITTEE (RIC)",
+    "dateCreated": "2012-09-11T10:45:00",
+    "dateUpdated": null,
+    "createdBy": "madetj",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R016",
+    "reportName": "DAILY INTELLIGENCE REPORT",
+    "dateCreated": "2012-10-23T10:33:00",
+    "dateUpdated": null,
+    "createdBy": "longboyz",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R017",
+    "reportName": "THREAT ASSESSMENT",
+    "dateCreated": "2013-02-08T13:39:00",
+    "dateUpdated": null,
+    "createdBy": "apalisoka",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R018",
+    "reportName": "MONTHLY REGIONAL INTELLIGENCE SUMMARY",
+    "dateCreated": "2013-02-15T16:12:00",
+    "dateUpdated": null,
+    "createdBy": "apalisoka",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R019",
+    "reportName": "ELECTION RELATED REPORT",
+    "dateCreated": "2013-05-09T09:02:00",
+    "dateUpdated": null,
+    "createdBy": "fuentesr",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R020",
+    "reportName": "LIAISON REPORT",
+    "dateCreated": "2013-08-05T14:19:00",
+    "dateUpdated": null,
+    "createdBy": "apalisoka",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R021",
+    "reportName": "SPECIAL BRIEF",
+    "dateCreated": "2015-08-14T08:36:00",
+    "dateUpdated": null,
+    "createdBy": "fuentesr",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R022",
+    "reportName": "AFTER MEETING REPORT",
+    "dateCreated": "2015-08-14T08:36:00",
+    "dateUpdated": null,
+    "createdBy": "fuentesr",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R023",
+    "reportName": "REGIONAL INTELLIGENCE ESTIMATE",
+    "dateCreated": "2015-08-14T08:37:00",
+    "dateUpdated": null,
+    "createdBy": "fuentesr",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R024",
+    "reportName": "AFTER ACTIVITY REPORT",
+    "dateCreated": "2015-08-14T08:37:00",
+    "dateUpdated": null,
+    "createdBy": "fuentesr",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R025",
+    "reportName": "SITUATION REPORT",
+    "dateCreated": "2015-08-24T16:45:00",
+    "dateUpdated": null,
+    "createdBy": "fuentesr",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R026",
+    "reportName": "REGIONAL ANTI-TERRORISM COUNCIL CONVERGENCE GROUP",
+    "dateCreated": "2016-02-18T08:36:00",
+    "dateUpdated": null,
+    "createdBy": "fuentesr",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R027",
+    "reportName": "PROFILE",
+    "dateCreated": "2018-06-11T10:47:00",
+    "dateUpdated": null,
+    "createdBy": "fuentesr",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R028",
+    "reportName": "SUMMARY OF DISCUSSION AND DECISION POINTS (SDDP)",
+    "dateCreated": "2019-10-16T11:03:00",
+    "dateUpdated": null,
+    "createdBy": "fuentesr",
+    "updatedBy": null
+  },
+  {
+    "sourceID": "D018",
+    "reportID": "D018-R029",
+    "reportName": "WEEKLY INTELLIGENCE REPORT",
+    "dateCreated": "2020-03-11T10:26:00",
+    "dateUpdated": null,
+    "createdBy": "delacruzr",
+    "updatedBy": null
+  }
+]

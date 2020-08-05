@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace IIRMSBot2.Model
 {
-    class CheckResult
+    class AliveResult
     {
-        public int Count { get; set; }
+        public bool Alive { get; set; }
     }
 }

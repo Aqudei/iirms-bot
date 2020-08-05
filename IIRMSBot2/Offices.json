@@ -1,0 +1,1422 @@
+﻿[
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D131",
+    "OfficeName": "AFP"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D049",
+    "OfficeName": "AFP MUTUAL BENEFIT ASSOCIATION, INC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20140002",
+    "OfficeName": "AFTER MEETING REPORT"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100006",
+    "OfficeName": "AGENCY MEDICAL OFFICER"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20120010",
+    "OfficeName": "AGENCY OPERATIONS COMMAND CENTER"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20080006",
+    "OfficeName": "AMIC-3 VISAYAS WIDE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20080007",
+    "OfficeName": "AMICC-3"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20080008",
+    "OfficeName": "ANTI-TERRORISM COUNCIL (ATC)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20160004",
+    "OfficeName": "ANTI-TERRORISM COUNCIL-PROGRAM MANAGEMENT CENTER"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20080013",
+    "OfficeName": "ANTI-TERRORISM TASK FORCE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090014",
+    "OfficeName": "ATHLETIC COMMITEE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D063",
+    "OfficeName": "AUSTRALIAN EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190007",
+    "OfficeName": "AUSTRALIAN SECRET INTELLIGENCE SERVICE (ASIS)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190008",
+    "OfficeName": "AUSTRALIAN SECURITY AND INTELLIGENCE ORG (ASIO)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190020",
+    "OfficeName": "BADAN INTELIJEN NEGARA (BIN)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20120021",
+    "OfficeName": "BEIRUT EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090005",
+    "OfficeName": "BIDS AND AWARDS COMMITTEE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D038",
+    "OfficeName": "BOARD OFINVESTMENT"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190010",
+    "OfficeName": "BRUNEI RESEARCH DEPARTMENT (BRD)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20200003",
+    "OfficeName": "BUREAU OF FIRE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D042",
+    "OfficeName": "BUREAU OF IMMIGRATION & DEPORTATION"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D117",
+    "OfficeName": "BUREAU OF INTERNAL REVENUE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D125",
+    "OfficeName": "BUREAU OF POST"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D028",
+    "OfficeName": "C2"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190025",
+    "OfficeName": "CABINET INFORMATION RESEARCH OFFICE (CIRO)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D062",
+    "OfficeName": "CANADIAN EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190012",
+    "OfficeName": "CANADIAN SECURITY INTELLIGENCE SERVICE (CSIS)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100007",
+    "OfficeName": "CDS"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190067",
+    "OfficeName": "CENTRAL INTELLIGENCE AGENCY (CIA)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190055",
+    "OfficeName": "CENTRO NACIONAL DE INTELIGENCIA (CNI)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D037",
+    "OfficeName": "CG2"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090012",
+    "OfficeName": "CHAIRMAN NICA ANNIVERSARY WORKING COMMITTEE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100001",
+    "OfficeName": "CHAIRMAN, AGENCY PROMOTION BOARD"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20120005",
+    "OfficeName": "CHAIRMAN, AWARDS BOARD"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100014",
+    "OfficeName": "CHAIRMAN, COMMITTEE ON FIREARMS"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090020",
+    "OfficeName": "CHAIRMAN, REORGANIZATION COMMITTEE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20120003",
+    "OfficeName": "CHAIRMMAN, INVENTORY BOARD"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D107",
+    "OfficeName": "CIVIL SERVICE COMMISSION"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100015",
+    "OfficeName": "COMMISSION OF HIGHER EDUCATION"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D111",
+    "OfficeName": "COMMISSION ON AUDIT"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100017",
+    "OfficeName": "COMMITTEE ON SPECIAL TRAINING (CST)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090019",
+    "OfficeName": "COMMITTEE ON THE SELECTION OF AGENCY CANTEEN OPTR"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190029",
+    "OfficeName": "COUNTER TERRORISM UNIT OF JAPAN (CTU-J)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20080011",
+    "OfficeName": "COURT OF APPEALS"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190015",
+    "OfficeName": "DANISH SECURITY AND INTEL SERVICE (PET)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190046",
+    "OfficeName": "DEFENSE STRATEGIC AND INFORMATION SERVICE (SIED)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190030",
+    "OfficeName": "DEPARTMENT HEADQTRS INTEL OF JAPAN"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20200002",
+    "OfficeName": "DEPARTMENT OF AGRARIAN REFORM (DAR)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D029",
+    "OfficeName": "DEPARTMENT OF BUDGET & MANAGEMENT"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20200001",
+    "OfficeName": "DEPARTMENT OF HEALTH (DOH)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D043",
+    "OfficeName": "DEPT OF EDUCATION, CULTURE & SPORTS"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D045",
+    "OfficeName": "DEPT OF ENERGY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D098",
+    "OfficeName": "DEPT OF FOREIGN AFFAIRS"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D099",
+    "OfficeName": "DEPT OF INTERIOR & LOCAL GOVT"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D122",
+    "OfficeName": "DEPT OF JUSTICE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D060",
+    "OfficeName": "DEPT OF LABOR & EMPLOYMENT"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D076",
+    "OfficeName": "DEPT OF NATIONAL DEFENSE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D051",
+    "OfficeName": "DEPT OF SCIENCE & TECHNOLOGY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D124",
+    "OfficeName": "DEPT OF TOURISM"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D108",
+    "OfficeName": "DEPT OF TRADE & INDUSTRY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D121",
+    "OfficeName": "DEPT OF TRANSPORTATION & COMMUNICATION"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D048",
+    "OfficeName": "DEVELOPMENT BANK OF THE PHILS"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090002",
+    "OfficeName": "DEVELOPMENTS IN INDONESIA"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20160003",
+    "OfficeName": "DFA"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D078",
+    "OfficeName": "DFA-ISS"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20160002",
+    "OfficeName": "DFA-ISU"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20140001",
+    "OfficeName": "DFA-OUNOIO"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20120007",
+    "OfficeName": "DFA-OUSOC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D079",
+    "OfficeName": "DFA-VISA"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190009",
+    "OfficeName": "DIRECTORATE GENERAL OF FORCES INTELLIGENCE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D077",
+    "OfficeName": "DND-OSA"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D123",
+    "OfficeName": "EPZA (BATAAN)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190024",
+    "OfficeName": "EXTERNAL INTEL AND SCTY AGENCY (AISE)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190017",
+    "OfficeName": "EXTERNAL SCTY GENERAL DIRECTORATE (DGSE)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190018",
+    "OfficeName": "FEDERAL INTELLIGENCE SERVICE (BND)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190049",
+    "OfficeName": "FEDERAL SECURITY SERVICE (FSB)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D046",
+    "OfficeName": "FIREARMS & EXPLOSIVES UNIT"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20110006",
+    "OfficeName": "FLO CHINA"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20120022",
+    "OfficeName": "FLO SINGAPORE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090013",
+    "OfficeName": "FLO-MALAYSIA"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20110001",
+    "OfficeName": "FLO-MIDDLE EAST/JORDAN/KSA"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090008",
+    "OfficeName": "FLO-SOUTHEAST ASIA (INDONESIA)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190028",
+    "OfficeName": "FOREIGN AFFAIRS AND INTEL DPT (FAID)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190048",
+    "OfficeName": "FOREIGN INTELLIGENCE SERVICE (SVR)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070006",
+    "OfficeName": "FRENCH EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D025",
+    "OfficeName": "G2"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190011",
+    "OfficeName": "GENERAL DEPARTMENT OF RESEARCH AND INTEL (GDRI)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190036",
+    "OfficeName": "GENERAL DIRECTORATE OF STUDIES AND DOC (DGED)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190038",
+    "OfficeName": "GENERAL INTEL AND SCTY SERVICE (AIVD)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190031",
+    "OfficeName": "GENERAL INTELLIGENCE DEPARTMENT"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190050",
+    "OfficeName": "GENERAL INTELLIGENCE PRESIDENCY (GIP)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190016",
+    "OfficeName": "GENERAL INTELLIGENCE SERVICE (GIS)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190057",
+    "OfficeName": "GENERAL SECURITY DIRECTORATE (GSD)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D102",
+    "OfficeName": "GERMAN EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070019",
+    "OfficeName": "GOVERNMENT BANKS (BSP, LAND BANK , PNB, PVB, ETC.)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D040",
+    "OfficeName": "GOVERNMENT SERVICE INSURANCE SYSTEM"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D115",
+    "OfficeName": "GOVT PURCHASES INFORMATIVE SYSTEM"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20120001",
+    "OfficeName": "HOME DEVELOPMENT MUTUAL FUND"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100005",
+    "OfficeName": "HOSAMU"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D058",
+    "OfficeName": "HOUSE COMMITTEE ON PUBLIC ORDER & SECURITY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D032",
+    "OfficeName": "HOUSE OF REPRESENTATIVES"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090017",
+    "OfficeName": "HQ 102ND MILITARY INTELLIGENCE COMPANY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20080004",
+    "OfficeName": "INDIAN EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070008",
+    "OfficeName": "INDONESIAN EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D056",
+    "OfficeName": "INSURANCE COMMISSION"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190027",
+    "OfficeName": "INTELLIGENCE AND ANALYSIS SERVICE (IAS)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190033",
+    "OfficeName": "INTELLIGENCE DEPARTMENT  OF LAO (IDL)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190045",
+    "OfficeName": "INTERNAL SECURITY AGENCY (ISA)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190052",
+    "OfficeName": "INTERNAL SECURITY DEPARTMENT (ISD)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190042",
+    "OfficeName": "INTER-SERVICES INTELLIGENCE OF PAKISTAN (ISI)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190022",
+    "OfficeName": "IRAQ NATIONAL INTEL SERVICE (INIS)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D075",
+    "OfficeName": "IRC-ITG"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D088",
+    "OfficeName": "ISAFP-CIS MEGA"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D085",
+    "OfficeName": "ISAFP-MIG 15"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D086",
+    "OfficeName": "ISAFP-MIG 17"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D087",
+    "OfficeName": "ISAFP-MIG 19"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D100",
+    "OfficeName": "ISAFP-ODCSI"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D082",
+    "OfficeName": "ISAFP-OID"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D084",
+    "OfficeName": "ISAFP-RECORDS"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D083",
+    "OfficeName": "ISAFP-SOD"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D126",
+    "OfficeName": "ISRAEL EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190023",
+    "OfficeName": "ISRAEL SCTY AND INTEL SERVICE (ISIS/MOSSAD)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100008",
+    "OfficeName": "ITG 6/JIC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D026",
+    "OfficeName": "J2"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D089",
+    "OfficeName": "J2-CID"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D090",
+    "OfficeName": "J2-IRC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20080016",
+    "OfficeName": "JAPIC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100009",
+    "OfficeName": "JRIC 6/JOINT AFP AND PNP INTEL COMMITTEE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100016",
+    "OfficeName": "KABALIKAT"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D064",
+    "OfficeName": "KOREAN EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190032",
+    "OfficeName": "KUWAIT STATE SECURITY SERVICE (KSSS)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D035",
+    "OfficeName": "LAND TRANSPORTATION OFFICE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190041",
+    "OfficeName": "LIAISON AND COORDINATION SERVICE (LCS)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190034",
+    "OfficeName": "LIBYAN INTELLIGENCE AGENCY (LIA)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D116",
+    "OfficeName": "MALACANANG"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070022",
+    "OfficeName": "MALACANANG-ANTI TERRORISM COUNCIL"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D127",
+    "OfficeName": "MALACANANG-NPUDC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D066",
+    "OfficeName": "MALAYSIAN EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D114",
+    "OfficeName": "MANILA WATER INC."
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D113",
+    "OfficeName": "MERALCO"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190061",
+    "OfficeName": "MILLI ISTIBARAT TESKILATI (MIT)-NIA"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190021",
+    "OfficeName": "MINISTRY OF INTEL OF THE ISLAMIC REP OF IRAN-MOIS"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190013",
+    "OfficeName": "MINISTRY OF STATE SECURITY (MSS)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190037",
+    "OfficeName": "MYANMAR POLICE FORCE (MPF)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D027",
+    "OfficeName": "N2"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D091",
+    "OfficeName": "N2-OB"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D092",
+    "OfficeName": "N2-PB"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D096",
+    "OfficeName": "NARCOTIC COMMAND"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190039",
+    "OfficeName": "NATIONAL ASSESSMENT BUREAU (NAB)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D036",
+    "OfficeName": "NATIONAL BUREAU OF INVESTIGATION"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D034",
+    "OfficeName": "NATIONAL COMPUTER CENTER"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20120023",
+    "OfficeName": "NATIONAL COUNTER TERRORISM UNIT"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070020",
+    "OfficeName": "NATIONAL DEFENSE COLLEGE OF THE PHILIPPINES (NDCP)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D052",
+    "OfficeName": "NATIONAL DEVELOPMENT CO"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D050",
+    "OfficeName": "NATIONAL ECONOMIC & DEVELOPMENT AUTHORITY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190059",
+    "OfficeName": "NATIONAL INTELLIGENCE AGENCY (NIA)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190056",
+    "OfficeName": "NATIONAL INTELLIGENCE AND SECURITY SERVICE (NISS)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070015",
+    "OfficeName": "NATIONAL INTELLIGENCE BOARD"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190044",
+    "OfficeName": "NATIONAL INTELLIGENCE ORGANIZATION (NIO)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190054",
+    "OfficeName": "NATIONAL INTELLIGENCE SERVICE (NIS)-SOUTH KOREA"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190063",
+    "OfficeName": "NATIONAL INTELLIGENCE SERVICE (NIS)-UAE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190026",
+    "OfficeName": "NATIONAL POLICE AGENCY OF JAPAN (NPAJ)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D095",
+    "OfficeName": "NATIONAL POLICE COMMISSION"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D094",
+    "OfficeName": "NATIONAL POWER CORP"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190058",
+    "OfficeName": "NATIONAL SECURITY BUREAU (NSB)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190069",
+    "OfficeName": "NATIONAL SECURITY BUREAU-YEMEN"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D023",
+    "OfficeName": "NATIONAL SECURITY COUNCIL"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100013",
+    "OfficeName": "NATIONAL YOUTH COMMISSION"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D053",
+    "OfficeName": "NATL STEEL CORP"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D054",
+    "OfficeName": "NATL TAX RESEARCH CENTER"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D101",
+    "OfficeName": "NAVAL EDUCATION & TRAINING COMMAND"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D103",
+    "OfficeName": "NEW ZEALAND EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D132",
+    "OfficeName": "NEWSPAPER"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D110",
+    "OfficeName": "NHMFC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090003",
+    "OfficeName": "NICA"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20080005",
+    "OfficeName": "NICA EXEC COMMITTEE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100003",
+    "OfficeName": "NICA PROVIDENT FUND"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D009",
+    "OfficeName": "NICA-ALO"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20120008",
+    "OfficeName": "NICA-AOOC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D005",
+    "OfficeName": "NICA-CITO"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D000",
+    "OfficeName": "NICA-CRAD"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070001",
+    "OfficeName": "NICA-CTIC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D004",
+    "OfficeName": "NICA-DI (D1)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D003",
+    "OfficeName": "NICA-DII (D2)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D002",
+    "OfficeName": "NICA-DIII (D3)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090004",
+    "OfficeName": "NICA-DIV (D4)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070004",
+    "OfficeName": "NICA-DV (D5)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190001",
+    "OfficeName": "NICA-DVI (D6)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070017",
+    "OfficeName": "NICA-EDPD"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190003",
+    "OfficeName": "NICA-FIRO"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090001",
+    "OfficeName": "NICA-FOO"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D008",
+    "OfficeName": "NICA-IA"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190005",
+    "OfficeName": "NICA-IAO (D6)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D010",
+    "OfficeName": "NICA-NCRO"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20170001",
+    "OfficeName": "NICA-NITC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D007",
+    "OfficeName": "NICA-OC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070005",
+    "OfficeName": "NICA-ODDG-OPS"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070003",
+    "OfficeName": "NICA-ODDG-SC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D001",
+    "OfficeName": "NICA-ODG"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190070",
+    "OfficeName": "NICA-OIO (D5)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190004",
+    "OfficeName": "NICA-OMO (D6)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D006",
+    "OfficeName": "NICA-OPP/PPO/MPO"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D011",
+    "OfficeName": "NICA-RO-01"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D012",
+    "OfficeName": "NICA-RO-02"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D013",
+    "OfficeName": "NICA-RO-03"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D014",
+    "OfficeName": "NICA-RO-04"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D015",
+    "OfficeName": "NICA-RO-05"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D016",
+    "OfficeName": "NICA-RO-06"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D017",
+    "OfficeName": "NICA-RO-07"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D018",
+    "OfficeName": "NICA-RO-08"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D019",
+    "OfficeName": "NICA-RO-09"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D020",
+    "OfficeName": "NICA-RO-10"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D021",
+    "OfficeName": "NICA-RO-11"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D022",
+    "OfficeName": "NICA-RO-12"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20120006",
+    "OfficeName": "NICA-RO-13"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190002",
+    "OfficeName": "NICA-SDU, DI"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190071",
+    "OfficeName": "NICA-SSO (D5)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D130",
+    "OfficeName": "NICA-TFM"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070002",
+    "OfficeName": "ODG"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190014",
+    "OfficeName": "OFFICE OF FOREIGN RELATIONS AND INFO-CZECH"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190006",
+    "OfficeName": "OFFICE OF NATIONAL INTELLIGENCE (ONI)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190068",
+    "OfficeName": "OFFICE OF THE DIRECTOR OF NATIONAL INTEL (ODNI)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20110005",
+    "OfficeName": "OFFICE OF THE OMBUDSMAN"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070023",
+    "OfficeName": "OFFICE OF THE PRESIDENT-OPAPP"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D104",
+    "OfficeName": "OFFICE OF THE SOLICITOR GENERAL"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070007",
+    "OfficeName": "OFFICE OFTHE PRESIDENT"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "0000",
+    "OfficeName": "Others"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D068",
+    "OfficeName": "PA-2ND DIV"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20110002",
+    "OfficeName": "PAKISTAN EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20080012",
+    "OfficeName": "PAKISTAN MINITRY OF FOREIGN AFFAIRS"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190043",
+    "OfficeName": "PALESTINIAN GENERAL INTELLIGENCE (PGI)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D128",
+    "OfficeName": "PAOCTF"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D057",
+    "OfficeName": "PHIL AMUSEMENT & GAMING CORP"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D119",
+    "OfficeName": "PHIL CENTER ON TRANSNATIONAL CRIME"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D093",
+    "OfficeName": "PHIL CHARITY SWEEPSTAKES OFFICE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D109",
+    "OfficeName": "PHIL HEALTH INSURANCE CORP"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D047",
+    "OfficeName": "PHIL HEART CENTER"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D030",
+    "OfficeName": "PHIL INFORMATION AGENCY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D044",
+    "OfficeName": "PHIL NATIONAL OIL CO"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D067",
+    "OfficeName": "PHIL NATIONAL POLICE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D041",
+    "OfficeName": "PHIL NATL VOLUNTEER SERVICE COORDINATING AGENCY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D033",
+    "OfficeName": "PHIL SENATE"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D129",
+    "OfficeName": "PHILDAFA VIETNAM"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100002",
+    "OfficeName": "PHILIPPINE ARMY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070021",
+    "OfficeName": "PHILIPPINE EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D073",
+    "OfficeName": "PNP-CIC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20080014",
+    "OfficeName": "PNP-DDI"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D069",
+    "OfficeName": "PNP-DI"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D071",
+    "OfficeName": "PNP-DO"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D074",
+    "OfficeName": "PNP-IG"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D072",
+    "OfficeName": "PNP-IRC"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D070",
+    "OfficeName": "PNP-ODI"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D024",
+    "OfficeName": "PRESIDENTIAL ANTI-SMUGGLING GROUP"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D031",
+    "OfficeName": "PRESIDENTIAL MANAGEMENT STAFF"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D055",
+    "OfficeName": "PRESIDENTIAL SECURITY GROUP"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D059",
+    "OfficeName": "PRIVATE INDIVIDUAL"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20170002",
+    "OfficeName": "PROVINCIAL INTELLIGENCE COMMITTEE (PIC)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D080",
+    "OfficeName": "PSG-G2"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D081",
+    "OfficeName": "PSG-SOB"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190019",
+    "OfficeName": "RESEARCH AND ANALYSIS WING (R&AW)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190035",
+    "OfficeName": "RESEARCH DIVISION (RD)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190047",
+    "OfficeName": "ROMANIAN INTELLIGENCE SERVICE (SRI)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D106",
+    "OfficeName": "RTVM"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190065",
+    "OfficeName": "SECRET INTELLIGENCE SERVICE (SIS/MI6)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190051",
+    "OfficeName": "SECURITY AND INTELLIGENCE DIVISION (SID)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190040",
+    "OfficeName": "SECURITY INTELLIGENCE SERVICE (SIS)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190066",
+    "OfficeName": "SECURITY SERVICE (MI5)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190060",
+    "OfficeName": "SERVICO NACIONAL DA INTELIGENCIA (SNI)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D065",
+    "OfficeName": "SINGAPOREAN EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D039",
+    "OfficeName": "SOCIAL SECURITY SYSTEM"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190053",
+    "OfficeName": "SOUTH AFRICAN SECRET SERVICE (SASS)"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090007",
+    "OfficeName": "SPANISH COUNTERPART"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20070024",
+    "OfficeName": "SPECIAL MONITORING COMMITTEE \"A\" \"B\""
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190062",
+    "OfficeName": "STATE SECURITY DEPARTMENT (SSD)-ABUDHABI"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20190064",
+    "OfficeName": "STATE SECURITY DEPARTMENT (SSD)-DUBAI"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20080009",
+    "OfficeName": "SULTANATE OF OMAN"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20090006",
+    "OfficeName": "THAI COUNTERPART"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D120",
+    "OfficeName": "THAILAND EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D112",
+    "OfficeName": "TREASURY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D105",
+    "OfficeName": "UNITED NATIONS DEV PROGRAM"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D061",
+    "OfficeName": "US EMBASSY"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D118",
+    "OfficeName": "WESTERN COMMAND"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "D097",
+    "OfficeName": "WESTERN POLICE DEPT"
+  },
+  {
+    "@ng-repeat": "option in sources",
+    "OfficeId": "RECSC20100011",
+    "OfficeName": "Z-OTHERS"
+  }
+]

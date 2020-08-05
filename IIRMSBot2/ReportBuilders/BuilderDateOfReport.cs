@@ -54,8 +54,9 @@ namespace IIRMSBot2.ReportBuilders
                         yearStr = (int.Parse(yearStr) + 2000).ToString();
                     }
 
-                    report.Add(KnownReportParts.PART_DATEOFREPORT, $"{monthNum}-{day:00}-{yearStr}");
+                    report.Add(KnownReportParts.PART_DATEOFREPORT_STR, $"{monthNum}-{day:00}-{yearStr}");
 
+                    report.Add(KnownReportParts.PART_DATEOFREPORT_UTC, DateTime.Parse($"{yearStr}-{monthNum}-{day:00}").ToString("0"));
                     return;
                 }
 
@@ -71,7 +72,8 @@ namespace IIRMSBot2.ReportBuilders
                         yearStr = (int.Parse(yearStr) + 2000).ToString();
                     }
 
-                    report.Add(KnownReportParts.PART_DATEOFREPORT, $"{monthNum}-{day:00}-{yearStr}");
+                    report.Add(KnownReportParts.PART_DATEOFREPORT_STR, $"{monthNum}-{day:00}-{yearStr}");
+                    report.Add(KnownReportParts.PART_DATEOFREPORT_UTC, DateTime.Parse($"{yearStr}-{monthNum}-{day:00}").ToString("O"));
                 }
                 else
                 {

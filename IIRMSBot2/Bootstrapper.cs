@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Caliburn.Micro;
 using IIRMSBot2.ViewModels;
+using ikvm.extensions;
 using Unity;
 
 namespace IIRMSBot2

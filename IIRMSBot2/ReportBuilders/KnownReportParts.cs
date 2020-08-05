@@ -4,7 +4,8 @@
     {
         public const string PART_CNR = "cnr";
         public const string PART_SUBJECT = "subject";
-        public const string PART_DATEOFREPORT = "date-of-report";
+        public const string PART_DATEOFREPORT_STR = "date-of-report-str";
+        public const string PART_DATEOFREPORT_UTC = "date-of-report-obj";
         public const string PART_BODY = "body";
         public const string PART_EVALUATION = "evaluation";
         public const string PART_DISTRIBUTION = "distribution";

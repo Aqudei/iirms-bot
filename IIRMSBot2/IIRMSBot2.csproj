@@ -230,8 +230,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BotConfig.cs" />
-    <Compile Include="Model\CheckResult.cs" />
+    <Compile Include="Model\AliveResult.cs" />
+    <Compile Include="Model\DuplicateResult.cs" />
+    <Compile Include="Model\EncodePayload.cs" />
     <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\Lookups.cs" />
+    <Compile Include="Model\NewResult.cs" />
+    <Compile Include="Model\OfficeInfo.cs" />
+    <Compile Include="Model\ReportType.cs" />
+    <Compile Include="Model\UploadResult.cs" />
     <Compile Include="ReportBuilders\BuilderCNR.cs" />
     <Compile Include="ReportBuilders\BuilderDateOfReport.cs" />
     <Compile Include="ReportBuilders\BuilderDistribution.cs" />
@@ -299,11 +306,17 @@
     </EmbeddedResource>
     <None Include="IIRMSBot2_1_TemporaryKey.pfx" />
     <None Include="IIRMSBot2_TemporaryKey.pfx" />
+    <Content Include="Offices.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="ReportTypes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

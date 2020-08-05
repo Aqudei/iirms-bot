@@ -10,7 +10,7 @@ namespace IIRMSBot2.ReportBuilders
         public MasterReportBuilder()
         {
             _reportBuilder.Add(KnownReportParts.PART_CNR, new BuilderCNR());
-            _reportBuilder.Add(KnownReportParts.PART_DATEOFREPORT, new BuilderDateOfReport());
+            _reportBuilder.Add(KnownReportParts.PART_DATEOFREPORT_STR, new BuilderDateOfReport());
             _reportBuilder.Add(KnownReportParts.PART_EVALUATION, new BuilderEvaluation());
             _reportBuilder.Add(KnownReportParts.PART_BODY, new BuilderReportBody());
             _reportBuilder.Add(KnownReportParts.REPORTTYPE, new BuilderReportType());
