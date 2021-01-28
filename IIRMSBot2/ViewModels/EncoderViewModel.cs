@@ -40,10 +40,10 @@ namespace IIRMSBot2.ViewModels
         private Item _selectedItem;
         private readonly RestClient _client = new RestClient();
         // Check if folder exists
-        // https://orange-green.tk/api/Encoding/checkFolder [GET]
-        // https://orange-green.tk/api/Encoding/upload [POST] params := file [binary]
+        // {BaseUrl}/api/Encoding/checkFolder [GET]
+        // {BaseUrl}/api/Encoding/upload [POST] params := file [binary]
         // Add doc info
-        // https://orange-green.tk/api/Encoding/new [POST] params 
+        // {BaseUrl}/api/Encoding/new [POST] params 
         /*
             DocumentId: "RECDCRO8-PROD-ALMINENDWOJDUFHY"
             FullText: "FIELD OPERATIONS REPORT S E C R E T AFTER ACTIVITY REPORT OFFICE OF ORIGIN : RO-08 FOR : LAD/SPAD, DII REPORT CNR : RO0820G181.AAR DATE OF REPORT : 09 JULY 2020 REFERENCES : RO8 LEGAL INITIATIVE ON CTG CHILD WARRIORS This is in line with the RO’s legal offensive on Communist Terrorist Group (CTG) child warriors. 080700H July 2020, RO8 Legal Desk Officers OP-843 and CI-861 left RO base in on board the ROs Toyota Hilux pick-up and proceeded to Headquarters, 802nd Infantry Brigade, 8th Infantry Division, Philippine Army (H802IB, 8ID, PA) in Camp Downes, Ormoc City. At 0930H, the duo arrived at Camp Downes and met Cpt Raagas who was tasked by Cpt Annie Lorraine Calcatan, S2 802Bde to attend to the RO legal team. OP-843 and CI-861 were ushered and introduced to the CTG surrenderee Realyn Lombog, 16 yrs old, Medical Aide, Squad Baking and Ruffa Correa-Lumbog, 19 yrs old, Finance Aide, Squad Abe, both of Platoon 1 (CN: Pingkoy), Sub-Regional Committee (SRC) LEVOX, Eastern Visayas Regional Party Committee (EVRPC). Prior to the interview, the legal desk officers accomplished the Former Rebel Information Sheet (FRIS) icow inputs obtained from the duo and have them signed it. After the interview, the duo agreed to execute affidavit statement and serve as witnesses that will be filed in court against the CTG on recruitment of child warriors under RA 9851 or RA 11188. The duo also provided significant information concerning the composition, leadership, disposition and armaments of Platoon 1 (CN: Pingkoy). The duo also shared circumstances on their recruitment as child combatants and their experience of molestation from a ranking CTG Officer and comrade. After the interview, OP-843 and CI-861 paid a courtesy call to Col Sozimo Oliveros (GSC) PA, Commanding Officer, 802 Bde, 8ID, PA. Col Oliveros appreciated the legal initiative of NICA RO8 under the platform of Situation Awareness and Knowledge Management (SAKM) and Legal Cooperation Clusters (LCC) of RTF ELCAC. The activity ended at 1430H, same day. OP-843 and CI-861 left Ormoc City at 1530H bound for Tacloban City. OP-843 and CI-861 at RO base at 1800H of same day. COMMENTS: 1. Report prepared by OP-843; reviewed by: OP-811; processed by: RO-859. 2. OP-843 and CI-861 incurred a total of PhP2,900.00 during the conduct of operational activity, broken down into PhP900.00 for meals of OP-843 and CI-861, PhpP1,000.00 for diesel, and PhP1,000.00 as monetary incentive given to both former rebels @ PhP500.00 each. 3. OO’s comments: a. The information gathered from both FRs will be submitted in the form of SOIs with FRIS attachment. Said information will likewise be converted into a judicial affidavit. b. The two (2) FRs are cooperative during the interview. 4. No problem on security was encountered during the whole duration of this activity. 5. Attached are the photo documentations. Distribution: 1-DII / 2-File ALEX MIZON ATTACHMENT OP-843 (interviewer) and Ruffa Correa-Lumbog @ Ernie/Roselyn/Geraldine, Finance Aide, Sqd Abe, Platoon 1 (CN: Pingkoy), SRC Levox, EVRPC (FR/interviewee) CI-861 (interviewer) and Realyn Lombog @ Shien, Medical Aide, Sqd Baking, Platoon 1 (CN: Pingkoy), SRC Levox, EVRPC (FR/interviewee) Courtesy Call with Col Sozimo Oliveros (GSC) PA, CO, 802nd Bde, 8ID, PA OP-843 (interviewer) and Ruffa Correa-Lumbog @ Ernie/Roselyn/Geraldine, Finance Aide, Sqd Abe, Platoon 1 (CN: Pingkoy), SRC Levox, EVRPC (FR/interviewee) Ruffa Correa-Lumbog @ Ernie/Roselyn/Geraldine, Finance Aide, Sqd Abe, Platoon 1 (CN: Pingkoy), SRC Levox, EVRPC S E C R E T Page 4 of 7 pages Copy 1 of 2 copies"
@@ -132,7 +132,7 @@ namespace IIRMSBot2.ViewModels
         {
             get
             {
-                var url = "https://orange-green.tk/api/Encoding/checkFolder";
+                var url = $"{BaseUrl}/api/Encoding/checkFolder";
                 var req = new RestRequest(url, Method.GET);
                 var response = _client.Execute(req);
                 return true;
@@ -282,9 +282,9 @@ namespace IIRMSBot2.ViewModels
                     return;
                 }
 
-                //var encodeUrl = "https://orange-green.tk/Encoder/Document";
-                // var encodeUrl1 = "https://orange-green.tk";
-                var encodeUrl2 = "https://orange-green.tk/Encoder#/Docs";
+                //var encodeUrl = "{BaseUrl}k/Encoder/Document";
+                // var encodeUrl1 = "{BaseUrl}k";
+                var encodeUrl2 = $"{BaseUrl}/Encoder#/Docs";
                 //_driver.Navigate().GoToUrl(encodeUrl1);
                 _driver.Navigate().GoToUrl(encodeUrl2);
                 _wait.Until(EC.ElementExists(By.LinkText("New Record"))).Click();
@@ -366,7 +366,7 @@ namespace IIRMSBot2.ViewModels
         private bool CheckDuplicate(string reportNumber)
         {
             var url =
-                $"https://orange-green.tk/api/Encoding/reportnumber?reportNumber={reportNumber}";
+                $"{BaseUrl}/api/Encoding/reportnumber?reportNumber={reportNumber}";
             var request = new RestRequest(url, Method.GET);
             var result = _client.Execute<DuplicateResult>(request);
             return result.Data.Duplicate;
@@ -374,7 +374,7 @@ namespace IIRMSBot2.ViewModels
 
         private void DoLogin()
         {
-            _driver.Navigate().GoToUrl("https://orange-green.tk/Account/Login?ReturnUrl=%2F");
+            _driver.Navigate().GoToUrl($"{BaseUrl}/Account/Login?ReturnUrl=%2F");
             var element = _wait.Until(d => d.FindElement(By.Name(Webpage.LOGIN_USERNAME)));
             element.SendKeys(UserName);
             element = _wait.Until(EC.ElementExists(By.Name(Webpage.LOGIN_PASSWORD)));
@@ -472,7 +472,7 @@ namespace IIRMSBot2.ViewModels
                     FullText = report[KnownReportParts.PART_BODY]
                 };
 
-                var url = "https://orange-green.tk/api/Encoding/new";
+                var url = $"{BaseUrl}/api/Encoding/new";
                 var request = new RestRequest(url, Method.POST);
                 request.AddJsonBody(encodePayload);
                 var response = _client.Execute<NewResult>(request);
@@ -542,7 +542,7 @@ namespace IIRMSBot2.ViewModels
                 return null;
             }
 
-            var request = new RestRequest("https://orange-green.tk/api/Encoding/upload", Method.POST);
+            var request = new RestRequest($"{BaseUrl}/api/Encoding/upload", Method.POST);
             request.AddFile("file", item.FileName);
             var result = _client.Execute<UploadResult>(request);
             return result.IsSuccessful ? result.Data : null;
