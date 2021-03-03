@@ -417,6 +417,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_68FF1D2B24FB909783313D4166457149"
+        "OwnerKey" = "8:_492B2065B7DC43BDA60EA6C22C5A4B53"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_68FF1D2B24FB909783313D4166457149"
+        "OwnerKey" = "8:_8BFC9050D28BE65CD591BC827118A81E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_692EE10BE2F51BF4B90B3926AA5F7EA9"
         "OwnerKey" = "8:_6A73945E07751916C5008BAE13C84E8E"
         "MsmSig" = "8:_UNDEFINED"
@@ -706,6 +718,12 @@
         "Entry"
         {
         "MsmKey" = "8:_8A7725A62E90BEB5FCCAE566875B8D3D"
+        "OwnerKey" = "8:_492B2065B7DC43BDA60EA6C22C5A4B53"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8BFC9050D28BE65CD591BC827118A81E"
         "OwnerKey" = "8:_492B2065B7DC43BDA60EA6C22C5A4B53"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1823,6 +1841,18 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_205EA57CB9701A1BDBDE477F7061DF2E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8BFC9050D28BE65CD591BC827118A81E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_68FF1D2B24FB909783313D4166457149"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3583,6 +3613,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_68FF1D2B24FB909783313D4166457149"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.WindowsAPICodePack, Version=1.1.4.0, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_68FF1D2B24FB909783313D4166457149"
+                    {
+                    "Name" = "8:Microsoft.WindowsAPICodePack.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.WindowsAPICodePack.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_697EECC69B0C4B36A99468BB367C558D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_692EE10BE2F51BF4B90B3926AA5F7EA9"
             {
             "AssemblyRegister" = "3:1"
@@ -4186,6 +4247,37 @@
                     }
                 }
             "SourcePath" = "8:IKVM.OpenJDK.Cldrdata.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_697EECC69B0C4B36A99468BB367C558D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8BFC9050D28BE65CD591BC827118A81E"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.WindowsAPICodePack.Shell, Version=1.1.4.0, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_8BFC9050D28BE65CD591BC827118A81E"
+                    {
+                    "Name" = "8:Microsoft.WindowsAPICodePack.Shell.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.WindowsAPICodePack.Shell.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_697EECC69B0C4B36A99468BB367C558D"
@@ -5623,15 +5715,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:IIRMSBot"
-        "ProductCode" = "8:{147E37D5-C89A-4813-B3BD-39F4C44FB513}"
-        "PackageCode" = "8:{91F67B17-4F30-43BD-9470-CB7FDD700070}"
+        "ProductCode" = "8:{72D78B76-ACBD-437A-BB90-9AE835BB9BD2}"
+        "PackageCode" = "8:{82FEB115-6C8F-4526-A9BD-6445A059DE74}"
         "UpgradeCode" = "8:{DC038A5F-E544-4868-881F-56FED200967C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.7.0"
+        "ProductVersion" = "8:1.7.1"
         "Manufacturer" = "8:Shade Soft"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

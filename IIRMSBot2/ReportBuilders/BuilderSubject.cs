@@ -11,7 +11,7 @@ namespace IIRMSBot2.ReportBuilders
         private readonly Regex _regex1;
         private readonly Regex _regex3;
 
-        private readonly List<string> OPNLS = new List<string> { ".LR", ".CR", ".FORE", ".CVR" };
+        private readonly List<string> OPNLS = new List<string> { ".LR", ".CR", ".CVR" };
 
         public BuilderSubject()
         {
@@ -26,7 +26,7 @@ namespace IIRMSBot2.ReportBuilders
 
             if (OPNLS.Any(o => report[KnownReportParts.PART_CNR].ToUpper().EndsWith(o)))
             {
-                report.Add(KnownReportParts.PART_SUBJECT, $"Operational Report '{report[KnownReportParts.PART_CNR]}'");
+                report.Add(KnownReportParts.PART_SUBJECT, $"{report[KnownReportParts.REPORTTYPE].ToUpper()} '{report[KnownReportParts.PART_CNR]}'");
             }
             else if (report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".ESR"))
             {
