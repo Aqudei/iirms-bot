@@ -16,6 +16,7 @@ namespace IIRMSBot2.ReportBuilders
             {"SOI" ,"SUMMARY OF INFORMATION"},
             {"AMR" ,"AFTER MEETING REPORT"},
             {"AAR" ,"AFTER ACTIVITY REPORT"},
+            {"LSI" ,"SUMMARY OF INFORMATION"},
             {"SDDP" ,"SUMMARY OF DISCUSSION AND DECISION POINTS (SDDP)"},
         };
 

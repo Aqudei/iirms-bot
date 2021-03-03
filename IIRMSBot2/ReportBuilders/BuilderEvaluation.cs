@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using TikaOnDotNet.TextExtraction;
+using System.Linq;
 
 namespace IIRMSBot2.ReportBuilders
 {
     public class BuilderEvaluation : ReportBuilderBase, IReportBuilder
     {
-
+        private List<string> DocEval = new List<string> { ".amr", ".aar", ".sddp", ".lsi" };
         private readonly Regex _regex;
         private readonly Regex _regex2;
 
@@ -21,9 +22,7 @@ namespace IIRMSBot2.ReportBuilders
 
         public void Build(Dictionary<string, string> report, TextExtractionResult rawInputBody)
         {
-            if (report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".AMR") 
-                || report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".AAR")
-                || report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".SDDP"))
+            if (DocEval.Any(d => report[KnownReportParts.PART_CNR].ToLower().EndsWith(d)))
             {
                 report.Add(KnownReportParts.PART_EVALUATION, "DOC");
                 return;

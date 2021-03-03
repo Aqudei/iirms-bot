@@ -255,11 +255,15 @@
     <Compile Include="Utils\SetClipboardHelper.cs" />
     <Compile Include="Utils\StaHelper.cs" />
     <Compile Include="ViewModels\EncoderViewModel.cs" />
+    <Compile Include="ViewModels\TesterViewModel.cs" />
     <Compile Include="Views\EncoderView.xaml.cs">
       <DependentUpon>EncoderView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TesterView.xaml.cs">
+      <DependentUpon>TesterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Webpage.cs" />
     <Page Include="Views\EncoderView.xaml">
@@ -282,6 +286,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TesterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

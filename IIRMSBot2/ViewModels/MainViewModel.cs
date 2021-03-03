@@ -13,6 +13,7 @@ namespace IIRMSBot2.ViewModels
         {
             ActivateItem(IoC.Get<SettingsViewModel>());
             Items.Add(IoC.Get<EncoderViewModel>());
+            Items.Add(IoC.Get<TesterViewModel>());
         }
     }
 }
