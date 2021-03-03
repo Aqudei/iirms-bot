@@ -31,16 +31,23 @@ namespace IIRMSBot2.ViewModels
             _masterReportBuilder = new MasterReportBuilder();
         }
 
+        private bool _isBusy;
+
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set { Set(ref _isBusy, value); }
+        }
 
         public void BrowseFile()
         {
-            var ofd = new OpenFileDialog
+            var ofd = new Microsoft.WindowsAPICodePack.Dialogs.CommonOpenFileDialog
             {
                 Multiselect = false
             };
 
             var result = ofd.ShowDialog();
-            if (result.HasValue && result.Value)
+            if (result == Microsoft.WindowsAPICodePack.Dialogs.CommonFileDialogResult.Ok)
             {
                 File = ofd.FileName;
             }
@@ -54,18 +61,30 @@ namespace IIRMSBot2.ViewModels
             set { Set(ref _display, value); }
         }
 
-        public void Run()
+        public IEnumerable<IResult> Run()
         {
-            var report = _masterReportBuilder.Build(File);
-            var sb = new StringBuilder();
-            foreach (var key in report.Keys)
+            yield return Task.Run(() =>
             {
-                sb.AppendLine($"{key}\t:\t{report[key]}");
-            }
+                IsBusy = true;
+                try
+                {
+                    var report = _masterReportBuilder.Build(File);
+                    var sb = new StringBuilder();
+                    foreach (var key in report.Keys)
+                    {
+                        sb.AppendLine($"{key}\t:\t{report[key]}");
+                    }
 
-            Display = sb.ToString();
+                    Display = sb.ToString();
+                }
+                finally
+                {
+                    IsBusy = false;
+                }
+
+            }).AsResult();
         }
 
-        public bool CanRun => !string.IsNullOrWhiteSpace(File);
+        public bool CanRun => !string.IsNullOrWhiteSpace(File) && !IsBusy;
     }
 }

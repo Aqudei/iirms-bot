@@ -162,35 +162,43 @@ namespace IIRMSBot2.ViewModels
         //    IsLoading = false;
         //}
 
-        public async void RunBot()
+        public IEnumerable<IResult> RunBot()
         {
-            IsLoading = true;
-            var options = new ChromeOptions();
-            await Task.Run(() =>
+            yield return Task.Run(() =>
             {
-                options.AddArguments("--disable-notifications"); // to disable notification
-                using (_driver = new ChromeDriver(options))
+                IsLoading = true;
+                try
                 {
-                    _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(120));
-                    DoLogin();
-                }
-
-                foreach (var item in Items)
-                {
-                    var uploadResult = UploadFile(item);
-                    if (uploadResult == null) continue;
-
-                    var result = SubmitDocumentInfo(uploadResult, item);
-                    if (result == null)
+                    var options = new ChromeOptions();
+                    options.AddArguments("--disable-notifications"); // to disable notification
+                    using (_driver = new ChromeDriver(options))
                     {
-                        continue;
+                        _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(120));
+                        DoLogin();
                     }
+
+                    foreach (var item in Items)
+                    {
+                        var uploadResult = UploadFile(item);
+                        if (uploadResult == null) continue;
+
+                        var result = SubmitDocumentInfo(uploadResult, item);
+                        if (result == null)
+                        {
+                            continue;
+                        }
+                    }
+
+                    Debug.WriteLine("Bot done.");
+
+                }
+                finally
+                {
+                    IsLoading = false;
                 }
 
-                Debug.WriteLine("Bot done.");
-            });
+            }).AsResult();
 
-            IsLoading = false;
         }
 
         public bool IsLoading
@@ -404,22 +412,36 @@ namespace IIRMSBot2.ViewModels
             botConfig.Save();
         }
 
-        public void Import()
+        public IEnumerable<IResult> Import()
         {
-            var dialog = new OpenFileDialog
-            {
-                Multiselect = true,
-                Filter = "Document Files |*.doc*"
-            };
+            yield return Task.Run(() =>
+             {
+                 IsLoading = true;
 
-            var result = dialog.ShowDialog();
-            if (!result.HasValue || !result.Value)
-                return;
+                 try
+                 {
+                     var dialog = new OpenFileDialog
+                     {
+                         Multiselect = true,
+                         Filter = "Document Files |*.doc*"
+                     };
 
-            foreach (var item in dialog.FileNames)
-                File.Copy(item, Path.Combine(_dataDirectory, Path.GetFileName(item)), true);
+                     var result = dialog.ShowDialog();
+                     if (!result.HasValue || !result.Value)
+                         return;
 
-            LoadDocuments();
+                     foreach (var item in dialog.FileNames)
+                         File.Copy(item, Path.Combine(_dataDirectory, Path.GetFileName(item)), true);
+
+                     LoadDocuments();
+                 }
+                 finally
+                 {
+                     IsLoading = false;
+                 }
+
+             }).AsResult();
+
         }
 
         private void LoadDocuments()
@@ -432,7 +454,7 @@ namespace IIRMSBot2.ViewModels
                 if (Items.Contains(newItem))
                     continue;
 
-                Items.Add(newItem);
+                Execute.OnUIThread(() => Items.Add(newItem));
             }
         }
 
