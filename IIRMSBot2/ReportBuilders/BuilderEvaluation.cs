@@ -7,7 +7,7 @@ namespace IIRMSBot2.ReportBuilders
 {
     public class BuilderEvaluation : ReportBuilderBase, IReportBuilder
     {
-        private List<string> DocEval = new List<string> { ".amr", ".aar", ".sddp", ".lsi", ".esr" };
+        private List<string> DocEval = new List<string> { ".AMR", ".AAR", ".SDDP", ".LSI", ".ESR", ".LR", ".CR", ".CVR" };
         private readonly Regex _regex;
         private readonly Regex _regex2;
 
@@ -22,7 +22,7 @@ namespace IIRMSBot2.ReportBuilders
 
         public void Build(Dictionary<string, string> report, TextExtractionResult rawInputBody)
         {
-            if (DocEval.Any(d => report[KnownReportParts.PART_CNR].ToLower().EndsWith(d)))
+            if (DocEval.Any(d => report[KnownReportParts.PART_CNR].ToUpper().EndsWith(d)))
             {
                 report.Add(KnownReportParts.PART_EVALUATION, "DOC");
                 return;

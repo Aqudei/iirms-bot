@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using TikaOnDotNet.TextExtraction;
 
@@ -9,6 +10,8 @@ namespace IIRMSBot2.ReportBuilders
         private readonly Regex _regex;
         private readonly Regex _regex1;
         private readonly Regex _regex3;
+
+        private readonly List<string> OPNLS = new List<string> { ".LR", ".CR", ".FORE", ".CVR" };
 
         public BuilderSubject()
         {
@@ -21,7 +24,11 @@ namespace IIRMSBot2.ReportBuilders
         {
             Match match = null;
 
-            if (report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".ESR"))
+            if (OPNLS.Any(o => report[KnownReportParts.PART_CNR].ToUpper().EndsWith(o)))
+            {
+                report.Add(KnownReportParts.PART_SUBJECT, $"Operational Report '{report[KnownReportParts.PART_CNR]}'");
+            }
+            else if (report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".ESR"))
             {
                 match = _regex1.Match(rawInputBody.Text);
                 if (match.Success)

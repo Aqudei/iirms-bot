@@ -19,6 +19,9 @@ namespace IIRMSBot2.ReportBuilders
             {"AAR" ,"AFTER ACTIVITY REPORT"},
             {"LSI" ,"SUMMARY OF INFORMATION"},
             {"SDDP" ,"SUMMARY OF DISCUSSION AND DECISION POINTS (SDDP)"},
+            {"CR" ,"CONTACT REPORT"},
+            {"LR" ,"LIAISON REPORT"},
+            {"CVR" ,"COVERAGE REPORT"},
         };
 
         public BuilderReportType()
