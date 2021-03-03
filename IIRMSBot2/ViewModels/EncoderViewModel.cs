@@ -22,6 +22,7 @@ using Cookie = System.Net.Cookie;
 using Exception = System.Exception;
 using Process = System.Diagnostics.Process;
 using EC = SeleniumExtras.WaitHelpers.ExpectedConditions;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace IIRMSBot2.ViewModels
 {
@@ -138,7 +139,8 @@ namespace IIRMSBot2.ViewModels
                 return true;
             }
         }
-        public bool CanRunBot => !IsLoading && !string.IsNullOrWhiteSpace(TwoFactor);
+        public bool CanRunBot => !IsLoading;
+        public bool CanImport => !IsLoading;
 
         //public async void RunBot()
         //{
@@ -164,40 +166,40 @@ namespace IIRMSBot2.ViewModels
 
         public IEnumerable<IResult> RunBot()
         {
-            yield return Task.Run(() =>
-            {
-                IsLoading = true;
-                try
-                {
-                    var options = new ChromeOptions();
-                    options.AddArguments("--disable-notifications"); // to disable notification
-                    using (_driver = new ChromeDriver(options))
-                    {
-                        _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(120));
-                        DoLogin();
-                    }
+            yield return Task.Run(async () =>
+           {
+               IsLoading = true;
+               try
+               {
+                   var options = new ChromeOptions();
+                   options.AddArguments("--disable-notifications"); // to disable notification
+                   using (_driver = new ChromeDriver(options))
+                   {
+                       _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(120));
+                       await DoLogin();
+                   }
 
-                    foreach (var item in Items)
-                    {
-                        var uploadResult = UploadFile(item);
-                        if (uploadResult == null) continue;
+                   foreach (var item in Items)
+                   {
+                       var uploadResult = UploadFile(item);
+                       if (uploadResult == null) continue;
 
-                        var result = SubmitDocumentInfo(uploadResult, item);
-                        if (result == null)
-                        {
-                            continue;
-                        }
-                    }
+                       var result = SubmitDocumentInfo(uploadResult, item);
+                       if (result == null)
+                       {
+                           continue;
+                       }
+                   }
 
-                    Debug.WriteLine("Bot done.");
+                   Debug.WriteLine("Bot done.");
 
-                }
-                finally
-                {
-                    IsLoading = false;
-                }
+               }
+               finally
+               {
+                   IsLoading = false;
+               }
 
-            }).AsResult();
+           }).AsResult();
 
         }
 
@@ -208,7 +210,16 @@ namespace IIRMSBot2.ViewModels
             {
                 Set(ref _isLoading, value);
                 NotifyOfPropertyChange(nameof(CanRunBot));
+                NotifyOfPropertyChange(nameof(CanImport));
             }
+        }
+
+        private int _importedCount = 0;
+
+        public int ImportedCount
+        {
+            get { return _importedCount; }
+            set { Set(ref _importedCount, value); }
         }
 
 
@@ -236,6 +247,7 @@ namespace IIRMSBot2.ViewModels
                 }
 
             Items.Clear();
+            ImportedCount = Items.Count;
         }
 
         public void RemoveSuccessful()
@@ -254,6 +266,8 @@ namespace IIRMSBot2.ViewModels
                 }
 
             foreach (var removable in removables) Items.Remove(removable);
+
+            ImportedCount = Items.Count;
         }
 
         private void WaitForAlert()
@@ -380,24 +394,32 @@ namespace IIRMSBot2.ViewModels
             return result.Data.Duplicate;
         }
 
-        private void DoLogin()
+        private Task DoLogin()
         {
-            _driver.Navigate().GoToUrl($"{BaseUrl}/Account/Login?ReturnUrl=%2F");
-            var element = _wait.Until(d => d.FindElement(By.Name(Webpage.LOGIN_USERNAME)));
-            element.SendKeys(UserName);
-            element = _wait.Until(EC.ElementExists(By.Name(Webpage.LOGIN_PASSWORD)));
-            element.SendKeys(Password);
-            element.Submit();
-
-            element = _wait.Until(EC.ElementExists(By.Name(Webpage.LOGIN_2FA)));
-            element.SendKeys(TwoFactor);
-            element.Submit();
-            _wait.Until(EC.ElementExists(By.ClassName("profile_img")));
-            _client.CookieContainer = new CookieContainer();
-            foreach (var cookie in _driver.Manage().Cookies.AllCookies)
+            return Task.Run(async () =>
             {
-                _client.CookieContainer.Add(new Cookie(cookie.Name, cookie.Value, cookie.Path, cookie.Domain));
-            }
+                _driver.Navigate().GoToUrl($"{BaseUrl}/Account/Login?ReturnUrl=%2F");
+                var element = _wait.Until(d => d.FindElement(By.Name(Webpage.LOGIN_USERNAME)));
+                element.SendKeys(UserName);
+                element = _wait.Until(EC.ElementExists(By.Name(Webpage.LOGIN_PASSWORD)));
+                element.SendKeys(Password);
+                element.Submit();
+
+                var code = await _dialogCoordinator.ShowInputAsync(this, "Login", "Please enter 2FA code:");
+
+                element = _wait.Until(EC.ElementExists(By.Name(Webpage.LOGIN_2FA)));
+                //element.SendKeys(TwoFactor);
+                element.SendKeys(code);
+                element.Submit();
+                _wait.Until(EC.ElementExists(By.ClassName("profile_img")));
+                _client.CookieContainer = new CookieContainer();
+                foreach (var cookie in _driver.Manage().Cookies.AllCookies)
+                {
+                    _client.CookieContainer.Add(new Cookie(cookie.Name, cookie.Value, cookie.Path, cookie.Domain));
+                }
+            });
+
+
         }
 
         public void SaveLogin()
@@ -456,9 +478,13 @@ namespace IIRMSBot2.ViewModels
 
                 Execute.OnUIThread(() => Items.Add(newItem));
             }
+
+            Execute.OnUIThread(() => ImportedCount = Items.Count);
         }
 
         private readonly Lookups _lookups = new Lookups();
+        private readonly IDialogCoordinator _dialogCoordinator;
+
         private NewResult SubmitDocumentInfo(UploadResult uploadResult, Item encodeItem)
         {
             try
@@ -570,8 +596,10 @@ namespace IIRMSBot2.ViewModels
             return result.IsSuccessful ? result.Data : null;
         }
 
-        public EncoderViewModel()
+        public EncoderViewModel(IDialogCoordinator dialogCoordinator)
         {
+            _dialogCoordinator = dialogCoordinator;
+
             DisplayName = "Auto-Encoder";
             var botConfig = BotConfig.Get();
             UserName = botConfig.UserName;
@@ -588,6 +616,7 @@ namespace IIRMSBot2.ViewModels
             Directory.CreateDirectory(_dataDirectory);
 
             LoadDocuments();
+
         }
     }
 }

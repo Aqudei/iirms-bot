@@ -7,6 +7,7 @@ using System.Windows;
 using Caliburn.Micro;
 using IIRMSBot2.ViewModels;
 using ikvm.extensions;
+using MahApps.Metro.Controls.Dialogs;
 using Unity;
 
 namespace IIRMSBot2
@@ -29,6 +30,7 @@ namespace IIRMSBot2
         {
             _container.RegisterType<IWindowManager, WindowManager>();
             _container.RegisterSingleton<IEventAggregator, EventAggregator>();
+            _container.RegisterInstance(DialogCoordinator.Instance);
         }
 
         protected override IEnumerable<object> GetAllInstances(Type service)
