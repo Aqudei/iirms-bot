@@ -11,7 +11,7 @@ namespace IIRMSBot2.ReportBuilders
 
         public void Build(Dictionary<string, string> report, TextExtractionResult rawInputBody)
         {
-            if (report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".AMR") 
+            if (report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".AMR")
                 || report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".AAR")
                 || report[KnownReportParts.PART_CNR].ToUpper().EndsWith(".SDDP"))
             {
@@ -36,7 +36,10 @@ namespace IIRMSBot2.ReportBuilders
             }
 
 
-            throw new PartNotFoundException("Report body not found");
+            if (string.IsNullOrWhiteSpace(rawInputBody.Text))
+                throw new PartNotFoundException("Report body not found");
+
+            report.Add(KnownReportParts.PART_BODY, Cleanup(rawInputBody.Text));
         }
     }
 }

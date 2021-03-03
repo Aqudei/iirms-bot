@@ -33,5 +33,10 @@ namespace IIRMSBot2.ReportBuilders
             var toSpaces = input.Replace('\r', ' ').Replace('\n', ' ').Replace('\t', ' ');
             return RemoveRedundantSpaces(toSpaces);
         }
+
+        protected string Cleanup(string input)
+        {
+            return RemoveTrails(RemoveRedundantSpaces( RemoveInBetweenWhiteSpaces(input)));
+        }
     }
 }

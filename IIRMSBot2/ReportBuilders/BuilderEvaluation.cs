@@ -7,7 +7,7 @@ namespace IIRMSBot2.ReportBuilders
 {
     public class BuilderEvaluation : ReportBuilderBase, IReportBuilder
     {
-        private List<string> DocEval = new List<string> { ".amr", ".aar", ".sddp", ".lsi" };
+        private List<string> DocEval = new List<string> { ".amr", ".aar", ".sddp", ".lsi", ".esr" };
         private readonly Regex _regex;
         private readonly Regex _regex2;
 

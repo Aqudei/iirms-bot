@@ -14,6 +14,7 @@ namespace IIRMSBot2.ReportBuilders
             {"IR" ,"INFORMATION REPORT"},
             {"SI" ,"SUMMARY OF INFORMATION"},
             {"SOI" ,"SUMMARY OF INFORMATION"},
+            {"ESR" ,"SITUATION REPORT"},
             {"AMR" ,"AFTER MEETING REPORT"},
             {"AAR" ,"AFTER ACTIVITY REPORT"},
             {"LSI" ,"SUMMARY OF INFORMATION"},
