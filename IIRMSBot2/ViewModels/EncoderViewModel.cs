@@ -233,41 +233,61 @@ namespace IIRMSBot2.ViewModels
             }
         }
 
-
-        public void Reset()
+        public IEnumerable<IResult> Reset()
         {
-            foreach (var item in Items)
+            yield return Task.Run(() =>
+            {
                 try
                 {
-                    File.Delete(item.FileName);
-                }
-                catch (Exception e)
-                {
-                    Debug.WriteLine(e);
-                }
+                    IsLoading = true;
+                    foreach (var item in Items)
+                        try
+                        {
+                            File.Delete(item.FileName);
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.WriteLine(e);
+                        }
 
-            Items.Clear();
-            ImportedCount = Items.Count;
+                    Items.Clear();
+                }
+                finally
+                {
+                    ImportedCount = Items.Count;
+                    IsLoading = false;
+                }
+            }).AsResult();
+
         }
 
-        public void RemoveSuccessful()
+        public IEnumerable<IResult> RemoveSuccessful()
         {
-            var removables = new List<Item>();
-
-            foreach (var item in Items.Where(item => item.ItemStatus == Item.ITEM_STATUS.SUCCESS))
+            yield return Task.Run(() =>
+            {
                 try
                 {
-                    File.Delete(item.FileName);
-                    removables.Add(item);
+                    IsLoading = true;
+                    var removables = new List<Item>();
+                    foreach (var item in Items.Where(item => item.ItemStatus == Item.ITEM_STATUS.SUCCESS))
+                        try
+                        {
+                            File.Delete(item.FileName);
+                            removables.Add(item);
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.WriteLine(e);
+                        }
+
+                    foreach (var removable in removables) Items.Remove(removable);
+                    ImportedCount = Items.Count;
                 }
-                catch (Exception e)
+                finally
                 {
-                    Debug.WriteLine(e);
+                    IsLoading = false;
                 }
-
-            foreach (var removable in removables) Items.Remove(removable);
-
-            ImportedCount = Items.Count;
+            }).AsResult();
         }
 
         private void WaitForAlert()
